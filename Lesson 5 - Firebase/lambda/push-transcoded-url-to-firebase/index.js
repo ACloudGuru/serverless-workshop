@@ -14,7 +14,7 @@ exports.handler = function(event, context, callback){
 
     var regionIdentifier = config.BUCKET_REGION === 'us-east-1' ? 's3' : 's3-' + config.BUCKET_REGION;
 
-    var videoUrl = 'http://' + regionIdentifier + '.amazonaws.com/' + bucket + '/' + key;
+    var videoUrl = config.S3 + '/' + key;
 
     // construct S3 URL based on bucket and key
     // the input file may have spaces so replace them with '+'
