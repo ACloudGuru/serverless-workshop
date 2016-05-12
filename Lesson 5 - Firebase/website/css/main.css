@@ -86,6 +86,7 @@ body {
 	box-shadow: #111 1px 1px 10px;
 	margin-bottom: 30px;
 	height: 215px;
+	cursor: pointer;
 }
 
 .video-card video {

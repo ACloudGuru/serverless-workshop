@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="28915be4-1df8-4dea-8116-3a738ab1ed40" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Lesson 5 - Firebase/website/js/video-controller.js" afterPath="$PROJECT_DIR$/Lesson 5 - Firebase/website/js/video-controller.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Lesson 5 - Firebase/website/css/main.css" afterPath="$PROJECT_DIR$/Lesson 5 - Firebase/website/css/main.css" />
     </list>
     <ignored path="serverless-workshop.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -147,21 +147,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="video-controller.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="video-controller.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Lesson 5 - Firebase/website/js/video-controller.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.20507812">
+            <state vertical-scroll-proportion="-7.7777777">
               <caret line="14" column="34" selection-start-line="14" selection-start-column="34" selection-end-line="14" selection-end-column="34" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main.css" pinned="false" current-in-tab="false">
+      <file leaf-file-name="main.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Lesson 5 - Firebase/website/css/main.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-11.960784">
-              <caret line="110" column="6" selection-start-line="110" selection-start-column="6" selection-end-line="110" selection-end-column="6" />
+            <state vertical-scroll-proportion="0.28">
+              <caret line="88" column="20" selection-start-line="88" selection-start-column="20" selection-end-line="88" selection-end-column="20" />
               <folding />
             </state>
           </provider>
@@ -211,9 +211,9 @@
         <option value="$PROJECT_DIR$/Lesson 3 - API Gateway and Lambda/website/index.html" />
         <option value="$PROJECT_DIR$/Lesson 4 - Policy Document and S3 Upload/website/index.html" />
         <option value="$PROJECT_DIR$/Lesson 5 - Firebase/lambda/video-transcoder-firebase-enabled/index.js" />
-        <option value="$PROJECT_DIR$/Lesson 5 - Firebase/website/css/main.css" />
         <option value="$PROJECT_DIR$/Lesson 5 - Firebase/website/index.html" />
         <option value="$PROJECT_DIR$/Lesson 5 - Firebase/website/js/video-controller.js" />
+        <option value="$PROJECT_DIR$/Lesson 5 - Firebase/website/css/main.css" />
       </list>
     </option>
   </component>
@@ -1171,18 +1171,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Lesson 5 - Firebase/website/css/main.css">
+    <entry file="file://$PROJECT_DIR$/Lesson 5 - Firebase/website/js/video-controller.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-11.960784">
-          <caret line="110" column="6" selection-start-line="110" selection-start-column="6" selection-end-line="110" selection-end-column="6" />
+        <state vertical-scroll-proportion="-7.7777777">
+          <caret line="14" column="34" selection-start-line="14" selection-start-column="34" selection-end-line="14" selection-end-column="34" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Lesson 5 - Firebase/website/js/video-controller.js">
+    <entry file="file://$PROJECT_DIR$/Lesson 5 - Firebase/website/css/main.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.20507812">
-          <caret line="14" column="34" selection-start-line="14" selection-start-column="34" selection-end-line="14" selection-end-column="34" />
+        <state vertical-scroll-proportion="0.28">
+          <caret line="88" column="20" selection-start-line="88" selection-start-column="20" selection-end-line="88" selection-end-column="20" />
           <folding />
         </state>
       </provider>
