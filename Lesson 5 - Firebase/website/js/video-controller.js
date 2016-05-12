@@ -22,6 +22,22 @@ var videoController = {
         // clone the template video element
         var newVideoElement = this.uiElements.videoCardTemplate.clone().attr('id', videoId);
 
+        newVideoElement.click(function() {
+            // the user has clicked on the video... let's play it, or pause it depending on state
+            var video = newVideoElement.find('video').get(0);
+
+            if (newVideoElement.is('.video-playing')) {
+                video.pause();
+            }
+            else {
+                video.currentTime = 0;
+                video.play();
+            }
+
+            newVideoElement.toggleClass('video-playing');
+
+        });
+
         this.updateVideoOnScreen(newVideoElement, videoObj);
 
         this.uiElements.videoList.prepend(newVideoElement);
@@ -74,18 +90,5 @@ var videoController = {
                 // update the video object on screen with the new video details from firebase
                 that.getElementForVideo(childSnapshot.key()).remove();
             });
-    },
-    wireEvents: function () {
-        var that = this;
-
-        /*this.uiElements.profileButton.click(function (e) {
-         var url = that.data.config.apiBaseUrl + 'user-profile';
-
-         $.get(url, function (data, status) {
-         // save user profile data in the modal
-         $('#user-profile-raw-json').text(JSON.stringify(data, null, 2));
-         $('#user-profile-modal').modal();
-         })
-         });*/
     }
 };

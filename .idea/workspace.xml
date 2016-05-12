@@ -2,55 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="28915be4-1df8-4dea-8116-3a738ab1ed40" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Lesson 2 - Web site and Authentication/website/popcorn.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Lesson 3 - API Gateway and Lambda/website/popcorn.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Lesson 4 - Policy Document and S3 Upload/website/popcorn.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Lesson 1 - Transcoding Pipeline/lambda/video-transcoder/config.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Lesson 5 - Firebase/website/js/upload-controller.js" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Lesson 5 - Firebase/2/Website/apple-touch-icon.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Lesson 5 - Firebase/2/Website/browserconfig.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Lesson 5 - Firebase/2/Website/css/bootstrap-theme.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Lesson 5 - Firebase/2/Website/css/bootstrap-theme.css.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Lesson 5 - Firebase/2/Website/css/bootstrap-theme.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Lesson 5 - Firebase/2/Website/css/bootstrap.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Lesson 5 - Firebase/2/Website/css/bootstrap.css.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Lesson 5 - Firebase/2/Website/css/bootstrap.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Lesson 5 - Firebase/2/Website/css/main.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Lesson 5 - Firebase/2/Website/favicon.ico" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Lesson 5 - Firebase/2/Website/fonts/glyphicons-halflings-regular.eot" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Lesson 5 - Firebase/2/Website/fonts/glyphicons-halflings-regular.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Lesson 5 - Firebase/2/Website/fonts/glyphicons-halflings-regular.ttf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Lesson 5 - Firebase/2/Website/fonts/glyphicons-halflings-regular.woff" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Lesson 5 - Firebase/2/Website/index.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Lesson 5 - Firebase/2/Website/js/main.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Lesson 5 - Firebase/2/Website/js/user-controller.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Lesson 5 - Firebase/2/Website/js/vendor/bootstrap.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Lesson 5 - Firebase/2/Website/js/vendor/bootstrap.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Lesson 5 - Firebase/2/Website/js/vendor/jquery-1.11.2.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Lesson 5 - Firebase/2/Website/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Lesson 5 - Firebase/2/Website/js/vendor/npm.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Lesson 5 - Firebase/2/Website/js/video-controller.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Lesson 5 - Firebase/2/Website/package.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Lesson 5 - Firebase/2/Website/tile-wide.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Lesson 5 - Firebase/2/Website/tile.png" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Lesson 1 - Transcoding Pipeline/lambda/video-transcoder/index.js" afterPath="$PROJECT_DIR$/Lesson 1 - Transcoding Pipeline/lambda/video-transcoder/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Lesson 2 - Web site and Authentication/website/css/main.css" afterPath="$PROJECT_DIR$/Lesson 2 - Web site and Authentication/website/css/main.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Lesson 2 - Web site and Authentication/website/index.html" afterPath="$PROJECT_DIR$/Lesson 2 - Web site and Authentication/website/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Lesson 3 - API Gateway and Lambda/website/css/main.css" afterPath="$PROJECT_DIR$/Lesson 3 - API Gateway and Lambda/website/css/main.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Lesson 3 - API Gateway and Lambda/website/index.html" afterPath="$PROJECT_DIR$/Lesson 3 - API Gateway and Lambda/website/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Lesson 3 - API Gateway and Lambda/website/js/config.js" afterPath="$PROJECT_DIR$/Lesson 3 - API Gateway and Lambda/website/js/config.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Lesson 3 - API Gateway and Lambda/website/js/user-controller.js" afterPath="$PROJECT_DIR$/Lesson 3 - API Gateway and Lambda/website/js/user-controller.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Lesson 4 - Policy Document and S3 Upload/website/css/main.css" afterPath="$PROJECT_DIR$/Lesson 4 - Policy Document and S3 Upload/website/css/main.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Lesson 4 - Policy Document and S3 Upload/website/index.html" afterPath="$PROJECT_DIR$/Lesson 4 - Policy Document and S3 Upload/website/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Lesson 4 - Policy Document and S3 Upload/website/js/config.js" afterPath="$PROJECT_DIR$/Lesson 4 - Policy Document and S3 Upload/website/js/config.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Lesson 4 - Policy Document and S3 Upload/website/js/upload-controller.js" afterPath="$PROJECT_DIR$/Lesson 4 - Policy Document and S3 Upload/website/js/upload-controller.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Lesson 4 - Policy Document and S3 Upload/website/js/user-controller.js" afterPath="$PROJECT_DIR$/Lesson 4 - Policy Document and S3 Upload/website/js/user-controller.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Lesson 5 - Firebase/lambda/video-transcoder-firebase-enabled/Lambda-Deployment.zip" afterPath="$PROJECT_DIR$/Lesson 5 - Firebase/lambda/video-transcoder-firebase-enabled/Lambda-Deployment.zip" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Lesson 5 - Firebase/lambda/video-transcoder-firebase-enabled/index.js" afterPath="$PROJECT_DIR$/Lesson 5 - Firebase/lambda/video-transcoder-firebase-enabled/index.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Lesson 5 - Firebase/website/css/main.css" afterPath="$PROJECT_DIR$/Lesson 5 - Firebase/website/css/main.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Lesson 5 - Firebase/website/index.html" afterPath="$PROJECT_DIR$/Lesson 5 - Firebase/website/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Lesson 5 - Firebase/website/js/config.js" afterPath="$PROJECT_DIR$/Lesson 5 - Firebase/website/js/config.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Lesson 5 - Firebase/website/js/main.js" afterPath="$PROJECT_DIR$/Lesson 5 - Firebase/website/js/main.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Lesson 5 - Firebase/website/js/user-controller.js" afterPath="$PROJECT_DIR$/Lesson 5 - Firebase/website/js/user-controller.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Lesson 5 - Firebase/website/js/video-controller.js" afterPath="$PROJECT_DIR$/Lesson 5 - Firebase/website/js/video-controller.js" />
     </list>
     <ignored path="serverless-workshop.iws" />
@@ -71,15 +26,15 @@
       <content type="file-editors">
         <state>
           <leaf>
-            <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
+            <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
               <entry file="file://$PROJECT_DIR$/Lesson 5 - Firebase/website/index.html">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state vertical-scroll-proportion="0.6134372">
-                    <caret line="120" column="18" selection-start-line="120" selection-start-column="18" selection-end-line="120" selection-end-column="18" />
+                  <state vertical-scroll-proportion="-15.0">
+                    <caret line="72" column="46" selection-start-line="72" selection-start-column="46" selection-end-line="72" selection-end-column="46" />
                     <folding>
                       <element signature="n#style#0;n#div#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-                      <marker date="1463058900000" expanded="true" signature="1016:1169" placeholder="..." />
-                      <marker date="1463058900000" expanded="true" signature="1109:1137" placeholder="..." />
+                      <marker date="1463063656000" expanded="true" signature="1016:1169" placeholder="..." />
+                      <marker date="1463063656000" expanded="true" signature="1109:1137" placeholder="..." />
                     </folding>
                   </state>
                 </provider>
@@ -95,10 +50,10 @@
                 </provider>
               </entry>
             </file>
-            <file leaf-file-name="user-controller.js" pinned="false" current-in-tab="false">
+            <file leaf-file-name="user-controller.js" pinned="false" current-in-tab="true">
               <entry file="file://$PROJECT_DIR$/Lesson 5 - Firebase/website/js/user-controller.js">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state vertical-scroll-proportion="-3.4444444">
+                  <state vertical-scroll-proportion="0.09082031">
                     <caret line="8" column="28" selection-start-line="8" selection-start-column="28" selection-end-line="8" selection-end-column="28" />
                     <folding />
                   </state>
@@ -125,36 +80,6 @@
                 <marker date="1463058865000" expanded="true" signature="1016:1169" placeholder="..." />
                 <marker date="1463058865000" expanded="true" signature="1109:1137" placeholder="..." />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="main.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Lesson 3 - API Gateway and Lambda/website/css/main.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-10.625">
-              <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="main.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Lesson 2 - Web site and Authentication/website/css/main.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-5.0">
-              <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="27" selection-end-column="1" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="main.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Lesson 4 - Policy Document and S3 Upload/website/css/main.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-8.416667">
-              <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="32" selection-end-column="1" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -192,16 +117,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="upload-controller.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Lesson 4 - Policy Document and S3 Upload/website/js/upload-controller.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="40" column="47" selection-start-line="40" selection-start-column="47" selection-end-line="40" selection-end-column="47" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="config.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Lesson 2 - Web site and Authentication/website/js/config.js">
           <provider selected="true" editor-type-id="text-editor">
@@ -212,16 +127,56 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Lesson 4 - Policy Document and S3 Upload/website/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.36611488">
-              <caret line="93" column="18" selection-start-line="93" selection-start-column="18" selection-end-line="93" selection-end-column="18" />
+            <state vertical-scroll-proportion="-22.541666">
+              <caret line="75" column="48" selection-start-line="75" selection-start-column="48" selection-end-line="75" selection-end-column="48" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <marker date="1463058887000" expanded="true" signature="1016:1169" placeholder="..." />
                 <marker date="1463058887000" expanded="true" signature="1109:1137" placeholder="..." />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Lesson 5 - Firebase/lambda/video-transcoder-firebase-enabled/index.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="59" column="67" selection-start-line="59" selection-start-column="67" selection-end-line="59" selection-end-column="67" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="video-controller.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Lesson 5 - Firebase/website/js/video-controller.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="1.3130352">
+              <caret line="92" column="5" selection-start-line="92" selection-start-column="5" selection-end-line="92" selection-end-column="5" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="main.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Lesson 5 - Firebase/website/css/main.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-11.960784">
+              <caret line="110" column="6" selection-start-line="110" selection-start-column="6" selection-end-line="110" selection-end-column="6" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Lesson 1 - Transcoding Pipeline/lambda/video-transcoder/index.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="37" column="47" selection-start-line="37" selection-start-column="26" selection-end-line="37" selection-end-column="47" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -240,19 +195,16 @@
         <option value="$PROJECT_DIR$/Lesson 4 - Policy Document and S3 Upload/lambda/index.js" />
         <option value="$PROJECT_DIR$/Lesson 5 - Firebase/lambda/video-transcoder-firebase-enabled/config.js" />
         <option value="$PROJECT_DIR$/Lesson 5 - Firebase/lambda/push-transcoded-url-to-firebase/package.json" />
-        <option value="$PROJECT_DIR$/Lesson 5 - Firebase/lambda/video-transcoder-firebase-enabled/index.js" />
         <option value="$PROJECT_DIR$/Lesson 5 - Firebase/lambda/push-transcoded-url-to-firebase/config.js" />
         <option value="$PROJECT_DIR$/Lesson 5 - Firebase/lambda/push-transcoded-url-to-firebase/index.js" />
         <option value="$PROJECT_DIR$/Lesson 5 - Firebase/website/js/main.js" />
         <option value="$PROJECT_DIR$/Lesson 5 - Firebase/website/js/config.js" />
         <option value="$PROJECT_DIR$/Lesson 5 - Firebase/website/js/user-controller.js" />
-        <option value="$PROJECT_DIR$/Lesson 5 - Firebase/website/js/video-controller.js" />
         <option value="$PROJECT_DIR$/Lesson 1 - Transcoding Pipeline/lambda/video-transcoder/index.js" />
         <option value="$PROJECT_DIR$/Lesson 1 - Transcoding Pipeline/lambda/video-transcoder/config.js" />
         <option value="$PROJECT_DIR$/Lesson 5 - Firebase/website/js/upload-controller.js" />
         <option value="$PROJECT_DIR$/Lesson 4 - Policy Document and S3 Upload/website/js/config.js" />
         <option value="$PROJECT_DIR$/Lesson 4 - Policy Document and S3 Upload/website/js/user-controller.js" />
-        <option value="$PROJECT_DIR$/Lesson 5 - Firebase/website/css/main.css" />
         <option value="$PROJECT_DIR$/Lesson 4 - Policy Document and S3 Upload/website/js/upload-controller.js" />
         <option value="$PROJECT_DIR$/Lesson 2 - Web site and Authentication/website/index.html" />
         <option value="$PROJECT_DIR$/Lesson 4 - Policy Document and S3 Upload/website/css/main.css" />
@@ -262,7 +214,10 @@
         <option value="$PROJECT_DIR$/Lesson 3 - API Gateway and Lambda/website/js/user-controller.js" />
         <option value="$PROJECT_DIR$/Lesson 3 - API Gateway and Lambda/website/index.html" />
         <option value="$PROJECT_DIR$/Lesson 4 - Policy Document and S3 Upload/website/index.html" />
+        <option value="$PROJECT_DIR$/Lesson 5 - Firebase/lambda/video-transcoder-firebase-enabled/index.js" />
+        <option value="$PROJECT_DIR$/Lesson 5 - Firebase/website/css/main.css" />
         <option value="$PROJECT_DIR$/Lesson 5 - Firebase/website/index.html" />
+        <option value="$PROJECT_DIR$/Lesson 5 - Firebase/website/js/video-controller.js" />
       </list>
     </option>
   </component>
@@ -272,8 +227,8 @@
     <detection-done>true</detection-done>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="168" />
-    <option name="y" value="54" />
+    <option name="x" value="94" />
+    <option name="y" value="122" />
     <option name="width" value="1551" />
     <option name="height" value="1148" />
   </component>
@@ -832,10 +787,10 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="168" y="54" width="1551" height="1148" extended-state="0" />
+    <frame x="94" y="122" width="1551" height="1148" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24951644" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24951644" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -1038,14 +993,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Lesson 5 - Firebase/website/js/video-controller.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-30.148148">
-          <caret line="74" column="70" selection-start-line="74" selection-start-column="70" selection-end-line="74" selection-end-column="70" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Lesson 5 - Firebase/lambda/push-transcoded-url-to-firebase/config.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1062,26 +1009,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Lesson 1 - Transcoding Pipeline/lambda/video-transcoder/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="18" column="47" selection-start-line="18" selection-start-column="47" selection-end-line="18" selection-end-column="47" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Lesson 1 - Transcoding Pipeline/lambda/video-transcoder/config.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="2" column="60" selection-start-line="2" selection-start-column="60" selection-end-line="2" selection-end-column="60" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Lesson 5 - Firebase/lambda/video-transcoder-firebase-enabled/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="33" />
           <folding />
         </state>
       </provider>
@@ -1102,14 +1033,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Lesson 5 - Firebase/website/css/main.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-13.725491">
-          <caret line="72" column="0" selection-start-line="72" selection-start-column="0" selection-end-line="77" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Lesson 4 - Policy Document and S3 Upload/website/js/user-controller.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-2.6296296">
@@ -1118,26 +1041,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Lesson 5 - Firebase/website/js/user-controller.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.4444444">
-          <caret line="8" column="28" selection-start-line="8" selection-start-column="28" selection-end-line="8" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Lesson 4 - Policy Document and S3 Upload/website/js/upload-controller.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="40" column="47" selection-start-line="40" selection-start-column="47" selection-end-line="40" selection-end-column="47" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Lesson 5 - Firebase/website/js/upload-controller.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-19.037037">
-          <caret line="44" column="33" selection-start-line="44" selection-start-column="33" selection-end-line="44" selection-end-column="33" />
           <folding />
         </state>
       </provider>
@@ -1214,8 +1121,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Lesson 4 - Policy Document and S3 Upload/website/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.36611488">
-          <caret line="93" column="18" selection-start-line="93" selection-start-column="18" selection-end-line="93" selection-end-column="18" />
+        <state vertical-scroll-proportion="-22.541666">
+          <caret line="75" column="48" selection-start-line="75" selection-start-column="48" selection-end-line="75" selection-end-column="48" />
           <folding>
             <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
             <marker date="1463058887000" expanded="true" signature="1016:1169" placeholder="..." />
@@ -1224,15 +1131,63 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Lesson 1 - Transcoding Pipeline/lambda/video-transcoder/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="37" column="47" selection-start-line="37" selection-start-column="26" selection-end-line="37" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Lesson 5 - Firebase/lambda/video-transcoder-firebase-enabled/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="59" column="67" selection-start-line="59" selection-start-column="67" selection-end-line="59" selection-end-column="67" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Lesson 5 - Firebase/website/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6134372">
-          <caret line="120" column="18" selection-start-line="120" selection-start-column="18" selection-end-line="120" selection-end-column="18" />
+        <state vertical-scroll-proportion="-15.0">
+          <caret line="72" column="46" selection-start-line="72" selection-start-column="46" selection-end-line="72" selection-end-column="46" />
           <folding>
             <element signature="n#style#0;n#div#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <marker date="1463058900000" expanded="true" signature="1016:1169" placeholder="..." />
-            <marker date="1463058900000" expanded="true" signature="1109:1137" placeholder="..." />
+            <marker date="1463063656000" expanded="true" signature="1016:1169" placeholder="..." />
+            <marker date="1463063656000" expanded="true" signature="1109:1137" placeholder="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Lesson 5 - Firebase/website/js/upload-controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-19.037037">
+          <caret line="44" column="33" selection-start-line="44" selection-start-column="33" selection-end-line="44" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Lesson 5 - Firebase/website/js/user-controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.09082031">
+          <caret line="8" column="28" selection-start-line="8" selection-start-column="28" selection-end-line="8" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Lesson 5 - Firebase/website/css/main.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-11.960784">
+          <caret line="110" column="6" selection-start-line="110" selection-start-column="6" selection-end-line="110" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Lesson 5 - Firebase/website/js/video-controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.3130352">
+          <caret line="92" column="5" selection-start-line="92" selection-start-column="5" selection-end-line="92" selection-end-column="5" />
+          <folding />
         </state>
       </provider>
     </entry>

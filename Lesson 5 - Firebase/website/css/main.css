@@ -100,3 +100,32 @@ body {
 	margin: 90px auto;
 	display: block;
 }
+
+.video-playing {
+	position: fixed;
+	display: table;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 999;
+	background: rgba(0,0,0,0.9);
+}
+
+.video-playing .video-card {
+	display: table-cell;
+	text-align: center;
+	vertical-align: middle;
+	height: auto !important;
+	background: none;
+}
+
+.video-playing .video-card video {
+	height: 50%;
+}
+
+nav {
+	z-index: 997 !important;
+}
