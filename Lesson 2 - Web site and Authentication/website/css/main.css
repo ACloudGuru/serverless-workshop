@@ -11,8 +11,10 @@
 	display: none;
 }
 
-
-
+#profilepicture {
+	height: 20px;
+	width: 20px;
+}
 
 
 

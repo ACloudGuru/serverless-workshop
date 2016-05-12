@@ -1,6 +1,6 @@
-(function(){
-	$(document).ready(function(){
-		userController.init(configConstants);
-	});
+(function () {
+    $(document).ready(function () {
+        userController.init(configConstants);
+    });
 }());
 

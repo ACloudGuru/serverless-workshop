@@ -2,8 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="28915be4-1df8-4dea-8116-3a738ab1ed40" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Lesson 3 - API Gateway and Lambda/website/css/main.css" afterPath="$PROJECT_DIR$/Lesson 3 - API Gateway and Lambda/website/css/main.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Lesson 2 - Web site and Authentication/website/css/main.css" afterPath="$PROJECT_DIR$/Lesson 2 - Web site and Authentication/website/css/main.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Lesson 2 - Web site and Authentication/website/index.html" afterPath="$PROJECT_DIR$/Lesson 2 - Web site and Authentication/website/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Lesson 2 - Web site and Authentication/website/js/config.js" afterPath="$PROJECT_DIR$/Lesson 2 - Web site and Authentication/website/js/config.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Lesson 2 - Web site and Authentication/website/js/main.js" afterPath="$PROJECT_DIR$/Lesson 2 - Web site and Authentication/website/js/main.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Lesson 2 - Web site and Authentication/website/js/user-controller.js" afterPath="$PROJECT_DIR$/Lesson 2 - Web site and Authentication/website/js/user-controller.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Lesson 3 - API Gateway and Lambda/website/index.html" afterPath="$PROJECT_DIR$/Lesson 3 - API Gateway and Lambda/website/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Lesson 3 - API Gateway and Lambda/website/js/config.js" afterPath="$PROJECT_DIR$/Lesson 3 - API Gateway and Lambda/website/js/config.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Lesson 3 - API Gateway and Lambda/website/js/main.js" afterPath="$PROJECT_DIR$/Lesson 3 - API Gateway and Lambda/website/js/main.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Lesson 3 - API Gateway and Lambda/website/js/user-controller.js" afterPath="$PROJECT_DIR$/Lesson 3 - API Gateway and Lambda/website/js/user-controller.js" />
     </list>
     <ignored path="serverless-workshop.iws" />
@@ -28,11 +36,11 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Lesson 3 - API Gateway and Lambda/website/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-18.416666">
-              <caret line="127" column="24" selection-start-line="127" selection-start-column="24" selection-end-line="127" selection-end-column="24" />
+            <state vertical-scroll-proportion="-21.875">
+              <caret line="114" column="35" selection-start-line="0" selection-start-column="0" selection-end-line="161" selection-end-column="0" />
               <folding>
-                <marker date="1463017311000" expanded="true" signature="1016:1169" placeholder="..." />
-                <marker date="1463017311000" expanded="true" signature="1109:1137" placeholder="..." />
+                <marker date="1463017521000" expanded="true" signature="1016:1169" placeholder="..." />
+                <marker date="1463017521000" expanded="true" signature="1109:1137" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -41,8 +49,18 @@
       <file leaf-file-name="main.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Lesson 3 - API Gateway and Lambda/website/css/main.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-3.8235295">
-              <caret line="13" column="17" selection-start-line="13" selection-start-column="17" selection-end-line="13" selection-end-column="17" />
+            <state vertical-scroll-proportion="-6.470588">
+              <caret line="22" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="main.css" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Lesson 2 - Web site and Authentication/website/css/main.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.43816942">
+              <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -58,11 +76,64 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="user-controller.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="user-controller.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Lesson 3 - API Gateway and Lambda/website/js/user-controller.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.22567703">
-              <caret line="15" column="40" selection-start-line="15" selection-start-column="40" selection-end-line="15" selection-end-column="40" />
+            <state vertical-scroll-proportion="-19.592592">
+              <caret line="78" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="105" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="config.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Lesson 3 - API Gateway and Lambda/website/js/config.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="7" column="1" selection-start-line="7" selection-start-column="1" selection-end-line="7" selection-end-column="1" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Lesson 2 - Web site and Authentication/website/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-20.291666">
+              <caret line="110" column="0" selection-start-line="110" selection-start-column="0" selection-end-line="110" selection-end-column="0" />
+              <folding>
+                <marker date="1463017716000" expanded="true" signature="1016:1169" placeholder="..." />
+                <marker date="1463017716000" expanded="true" signature="1109:1137" placeholder="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="user-controller.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Lesson 2 - Web site and Authentication/website/js/user-controller.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="75" column="24" selection-start-line="75" selection-start-column="24" selection-end-line="75" selection-end-column="24" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="config.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Lesson 2 - Web site and Authentication/website/js/config.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="main.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Lesson 2 - Web site and Authentication/website/js/main.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -79,6 +150,11 @@
         <option value="$PROJECT_DIR$/Lesson 3 - API Gateway and Lambda/website/css/main.css" />
         <option value="$PROJECT_DIR$/Lesson 3 - API Gateway and Lambda/website/js/user-controller.js" />
         <option value="$PROJECT_DIR$/Lesson 3 - API Gateway and Lambda/website/index.html" />
+        <option value="$PROJECT_DIR$/Lesson 2 - Web site and Authentication/website/js/main.js" />
+        <option value="$PROJECT_DIR$/Lesson 2 - Web site and Authentication/website/js/config.js" />
+        <option value="$PROJECT_DIR$/Lesson 2 - Web site and Authentication/website/index.html" />
+        <option value="$PROJECT_DIR$/Lesson 2 - Web site and Authentication/website/js/user-controller.js" />
+        <option value="$PROJECT_DIR$/Lesson 2 - Web site and Authentication/website/css/main.css" />
       </list>
     </option>
   </component>
@@ -88,8 +164,8 @@
     <detection-done>true</detection-done>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="874" />
-    <option name="y" value="155" />
+    <option name="x" value="660" />
+    <option name="y" value="115" />
     <option name="width" value="1551" />
     <option name="height" value="1148" />
   </component>
@@ -212,6 +288,82 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="serverless-workshop" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="serverless-workshop" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Lesson 2 - Web site and Authentication" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="serverless-workshop" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="serverless-workshop" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Lesson 2 - Web site and Authentication" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="website" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="serverless-workshop" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="serverless-workshop" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Lesson 2 - Web site and Authentication" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="website" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="serverless-workshop" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="serverless-workshop" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Lesson 2 - Web site and Authentication" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="website" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="css" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
       <pane id="Scratches" />
@@ -234,7 +386,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="874" y="155" width="1551" height="1148" extended-state="0" />
+    <frame x="660" y="115" width="1551" height="1148" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24951644" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -271,29 +423,80 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Lesson 3 - API Gateway and Lambda/website/css/main.css">
+    <entry file="file://$PROJECT_DIR$/Lesson 3 - API Gateway and Lambda/website/js/config.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.8235295">
-          <caret line="13" column="17" selection-start-line="13" selection-start-column="17" selection-end-line="13" selection-end-column="17" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="7" column="1" selection-start-line="7" selection-start-column="1" selection-end-line="7" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Lesson 3 - API Gateway and Lambda/website/js/user-controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-19.592592">
+          <caret line="78" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="105" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Lesson 2 - Web site and Authentication/website/js/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Lesson 2 - Web site and Authentication/website/js/config.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Lesson 3 - API Gateway and Lambda/website/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-18.416666">
-          <caret line="127" column="24" selection-start-line="127" selection-start-column="24" selection-end-line="127" selection-end-column="24" />
+        <state vertical-scroll-proportion="-21.875">
+          <caret line="114" column="35" selection-start-line="0" selection-start-column="0" selection-end-line="161" selection-end-column="0" />
           <folding>
-            <marker date="1463017311000" expanded="true" signature="1016:1169" placeholder="..." />
-            <marker date="1463017311000" expanded="true" signature="1109:1137" placeholder="..." />
+            <marker date="1463017521000" expanded="true" signature="1016:1169" placeholder="..." />
+            <marker date="1463017521000" expanded="true" signature="1109:1137" placeholder="..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Lesson 3 - API Gateway and Lambda/website/js/user-controller.js">
+    <entry file="file://$PROJECT_DIR$/Lesson 2 - Web site and Authentication/website/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.22567703">
-          <caret line="15" column="40" selection-start-line="15" selection-start-column="40" selection-end-line="15" selection-end-column="40" />
+        <state vertical-scroll-proportion="-20.291666">
+          <caret line="110" column="0" selection-start-line="110" selection-start-column="0" selection-end-line="110" selection-end-column="0" />
+          <folding>
+            <marker date="1463017716000" expanded="true" signature="1016:1169" placeholder="..." />
+            <marker date="1463017716000" expanded="true" signature="1109:1137" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Lesson 2 - Web site and Authentication/website/js/user-controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="75" column="24" selection-start-line="75" selection-start-column="24" selection-end-line="75" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Lesson 3 - API Gateway and Lambda/website/css/main.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.470588">
+          <caret line="22" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Lesson 2 - Web site and Authentication/website/css/main.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.43816942">
+          <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
           <folding />
         </state>
       </provider>
