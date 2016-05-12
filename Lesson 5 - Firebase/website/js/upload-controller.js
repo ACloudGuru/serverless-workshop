@@ -3,7 +3,8 @@ var uploadController = {
         config: null
     },
     uiElements: {
-        uploadButton: null
+        uploadButton: null,
+        uploadProgressBar: null
     },
     init: function (configConstants) {
         this.data.config = configConstants;
@@ -31,7 +32,6 @@ var uploadController = {
         this.uiElements.uploadProgressBar.show();
         this.uiElements.uploadProgressBar.find('.progress-bar').css('width', '0');
 
-
         var fd = new FormData();
         fd.append('key', data.key)
         fd.append('acl', 'private');
@@ -54,14 +54,14 @@ var uploadController = {
         }).done(function (response) {
             that.uiElements.uploadButtonContainer.show();
             that.uiElements.uploadProgressBar.hide();
-            alert('Uploaded Finished');
         }).fail(function (response) {
             that.uiElements.uploadButtonContainer.show();
             that.uiElements.uploadProgressBar.hide();
             alert('Failed to upload');
-        })
+        });
     },
     progress: function () {
+
         var xhr = $.ajaxSettings.xhr();
         xhr.upload.onprogress = function (evt) {
             var percentage = evt.loaded / evt.total * 100;

@@ -5,9 +5,10 @@
  */
 'use strict';
 var AWS = require('aws-sdk');
+var config = require('./config');
 
 var elasticTranscoder = new AWS.ElasticTranscoder({
-    region: 'us-east-1'
+    region: config.ELASTIC_TRANSCODER_REGION
 });
 
 exports.handler = function(event, context, callback){
@@ -22,7 +23,7 @@ exports.handler = function(event, context, callback){
     var outputKey = sourceKey.split('.')[0];
 
     var params = {
-        PipelineId: '1451470066051-jscnci',
+        PipelineId: config.ELASTIC_TRANSCODER_PIPELINE_ID,
         OutputKeyPrefix: outputKey + '/',
         Input: {
             Key: sourceKey

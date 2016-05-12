@@ -5,4 +5,3 @@ var configConstants = {
     },
     apiBaseUrl: 'https://aljgfttqq9.execute-api.us-east-1.amazonaws.com/dev/'
 };
-ß

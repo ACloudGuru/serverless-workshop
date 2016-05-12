@@ -73,7 +73,7 @@ var userController = {
                 if (err) {
                     // Error callback
                     alert('There was an error');
-                } else {ß
+                } else {
                     // Save the JWT token.
                     localStorage.setItem('userToken', token);
 

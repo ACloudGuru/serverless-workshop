@@ -49,10 +49,6 @@
 
             <div class="navbar-form navbar-right">
 
-              <span id="upload-container" class="btn btn-primary btn-file">
-                  Upload Video <input id="upload" type="file" name="file">
-              </span>
-
                 <button id="user-profile" class="btn btn-default"><img id="profilepicture"/>
                     <span id="profilename"></span></button>
 
@@ -67,54 +63,20 @@
 
 <!-- Main jumbotron for a primary marketing message or call to action -->
 <div class="jumbotron">
-    <div class="container">
-        <h1>Hello, world!</h1>
+    <div id="hero" class="container">
+        <img src="popcorn.png" />
+        <h1>All videos. All the time.</h1>
 
-        <p>This is a template for a simple marketing or informational website. It includes a large callout called a
-            jumbotron and three supporting pieces of content. Use it as a starting point to create something more
-            unique.</p>
-
-        <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p>
+        <p>Guaranteed 100% server free.</p>
     </div>
 </div>
 
-<div class="container">
-    <!-- Example row of columns -->
-    <div class="row">
-        <div class="col-md-4">
-            <h2>Heading</h2>
+<div class="container" id="video-list-container">
+    <span id="upload-video-button" class="btn btn-info btn-file">
+          <span class="glyphicon glyphicon-plus"></span> <input id="upload" type="file" name="file">
+    </span>
 
-            <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris
-                condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis
-                euismod. Donec sed odio dui. </p>
-
-            <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-        </div>
-        <div class="col-md-4">
-            <h2>Heading</h2>
-
-            <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris
-                condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis
-                euismod. Donec sed odio dui. </p>
-
-            <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-        </div>
-        <div class="col-md-4">
-            <h2>Heading</h2>
-
-            <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula
-                porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut
-                fermentum massa justo sit amet risus.</p>
-
-            <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-        </div>
-    </div>
-
-    <hr>
-
-    <footer>
-        <p>&copy; Company 2015</p>
-    </footer>
+    <div class="progress" id="upload-progress"><div class="progress-bar progress-bar-info progress-bar-striped" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width:20%"> <span class="sr-only">20% Complete</span> </div> </div>
 </div> <!-- /container -->
 
 <!-- User profile modal -->
@@ -129,7 +91,7 @@
             <div class="modal-body">
                 <b>Raw JSON from Auth0:</b>
                 <pre id="user-profile-raw-json"></pre>
-            </div>ß
+            </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
             </div>

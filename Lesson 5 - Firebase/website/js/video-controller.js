@@ -39,7 +39,7 @@ var videoController = {
         }
 
         // set the video URL
-        videoElement.find('source').attr('src', videoObj.source);
+        videoElement.find('video').attr('src', videoObj.source);
     },
     getElementForVideo: function(videoId) {
         return $('#' + videoId);
@@ -49,8 +49,10 @@ var videoController = {
 
         var firebaseRef = new Firebase(this.data.config.firebaseUrl);
 
+        var firebaseVideoNodeRef = firebaseRef.child('videos');
+
         // fired when a new movie is added to firebase
-        firebaseRef.child('videos')
+        firebaseVideoNodeRef
             .on('child_added', function (childSnapshot, prevChildKey) {
                 that.uiElements.loadingIndicator.hide();
 
@@ -59,11 +61,18 @@ var videoController = {
             });
 
         // fired when a movie is updated
-        firebaseRef.child('videos')
+        firebaseVideoNodeRef
             .on('child_changed', function (childSnapshot, prevChildKey) {
 
                 // update the video object on screen with the new video details from firebase
                 that.updateVideoOnScreen(that.getElementForVideo(childSnapshot.key()), childSnapshot.val());
+            });
+
+        firebaseVideoNodeRef
+            .on('child_removed', function (childSnapshot, prevChildKey) {
+
+                // update the video object on screen with the new video details from firebase
+                that.getElementForVideo(childSnapshot.key()).remove();
             });
     },
     wireEvents: function () {
