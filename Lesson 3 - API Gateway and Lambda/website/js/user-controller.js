@@ -1,25 +1,41 @@
 var userController = {
-	settings: {
-		lock: null,
-		login: null,
-		logout: null,
+	data: {
+		auth0Lock: null,
+		config: null
+	},
+	uiElements: {
+		loginButton: null,
+		logoutButton: null,
 		config: null,
-		showProfile: null
+		profileNameLabel: null,
+		profileImage: null
 	},
 	init: function(config) {
-		this.login = $('#auth0-login');
-		this.logout = $('#auth0-logout');
-		this.showProfile = $('#user-profile');
-		this.config = config;
+		this.uiElements.loginButton = $('#auth0-login');
+		this.uiElements.logoutButton = $('#auth0-logout');
+		this.uiElements.profileButton = $('#user-profile');
+		this.uiElements.profileNameLabel = $('#profilename');
+		this.uiElements.profileImage = $('#profilepicture');
 
-		this.lock = new Auth0Lock(config.auth0.clientId, config.auth0.domain);
+		this.data.config = config;
+		this.data.auth0Lock = new Auth0Lock(config.auth0.clientId, config.auth0.domain);
 
-		if (localStorage.getItem('userToken')) {
+		// check to see if the user has previously logged in
+		var idToken = localStorage.getItem('userToken');
+
+		if (idToken) {
 			this.configureAuthenticatedRequests();
 
-			this.login.hide();
-			this.logout.show();
-			this.showProfile.show();
+			var that = this;
+
+			this.data.auth0Lock.getProfile(idToken, function (err, profile) {
+				if (err) {
+					return alert('There was an error getting the profile: ' + err.message);
+				}
+				// Display user information
+				that.showUserAuthenticationDetails(profile);
+
+			});
 		}
 
 		this.wireEvents();
@@ -31,17 +47,29 @@ var userController = {
 		  }
 		});
 	},
+	showUserAuthenticationDetails: function(profile) {
+		var showAuthenticationElements = !!profile;
+
+		if (showAuthenticationElements) {
+			this.uiElements.profileNameLabel.text(profile.nickname);
+			this.uiElements.profileImage.attr('src', profile.picture);
+		}
+
+		this.uiElements.loginButton.toggle(!showAuthenticationElements);
+		this.uiElements.logoutButton.toggle(showAuthenticationElements);
+		this.uiElements.profileButton.toggle(showAuthenticationElements);
+	},
 	wireEvents: function() {
 		var that = this;
 
-		this.login.click(function(e){
+		this.uiElements.loginButton.click(function(e){
 			var params = {
 				authParams: {
 					scope: 'openid email user_metadata picture'
 				}
 			};
 
-		  	that.lock.show(params, function(err, profile, token) {
+		  	that.data.auth0Lock.show(params, function(err, profile, token) {
 			    if (err) {
 			      // Error callback
 			      alert('There was an error');
@@ -51,26 +79,26 @@ var userController = {
 
 			      that.configureAuthenticatedRequests();
 
-			      that.login.hide();
-			      that.logout.show();
-			      that.showProfile.show();
+				  that.showUserAuthenticationDetails(profile);
 			    }
 	  		});
 		});
 
-		this.logout.click(function(e){
+		this.uiElements.logoutButton.click(function(e){
 			localStorage.removeItem('userToken');
 
-			that.logout.hide();
-			that.showProfile.hide();
-			that.login.show();
+			that.uiElements.logoutButton.hide();
+			that.uiElements.profileButton.hide();
+			that.uiElements.loginButton.show();
 		});
 
-		this.showProfile.click(function(e){
-			var url = that.config.apiBaseUrl + 'user-profile';
+		this.uiElements.profileButton.click(function(e){
+			var url = that.data.config.apiBaseUrl + 'user-profile';
 
 			$.get(url, function(data, status){
-				alert(JSON.stringify(data));
+				// save user profile data in the modal
+				$('#user-profile-raw-json').text(JSON.stringify(data, null, 2));
+				$('#user-profile-modal').modal();
 			})
 		});
 	}
