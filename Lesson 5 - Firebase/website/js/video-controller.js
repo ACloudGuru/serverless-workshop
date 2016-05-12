@@ -14,8 +14,6 @@ var videoController = {
 
         this.data.config = config;
 
-        this.wireEvents();
-
         this.connectToFirebase();
     },
     addVideoToScreen: function (videoId, videoObj) {
