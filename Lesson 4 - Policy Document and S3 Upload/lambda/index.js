@@ -53,7 +53,11 @@ function sign(key, policy, encoding, next) {
 exports.handler = function(event, context, callback){
   var filename = decodeURI(event.filename);
 
-  async.waterfall([async.apply(generatePolicyDocument, filename), encode, sign],
+  async.waterfall([
+      async.apply(generatePolicyDocument, filename),
+      encode,
+      sign
+  ],
     function (err, key, policy, encoding, signature) {
       if (err) {
         callback(err);

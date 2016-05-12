@@ -70,6 +70,11 @@
 <!-- Movie template. This is cloned, never shown directly -->
 <div id="video-template" class="col-sm-4 col">
     <div class="video-card">
+        <div class="transcoding-indicator">
+            <object type="image/svg+xml" data="transcoding-indicator.svg">
+                Your browser does not support SVG
+            </object>
+        </div>
         <video width="100%" height="100%" controls>
             <source type="video/mp4">
             Your browser does not support the video tag.
@@ -78,16 +83,19 @@
 </div>
 <!-- / movie template -->
 
-<div id="video-list-section">
-    <div class="container text-center">
-        <button id="upload-video-button" class="btn btn-info"><span class="glyphicon glyphicon-plus"></span></button>
-        <!-- Row of movies -->
-        <div id="video-list" class="row">
+<div class="container" id="video-list-container">
+    <button id="upload-video-button" class="btn btn-info"><span class="glyphicon glyphicon-plus"></span></button>
 
-        </div>
+    <object id="loading-indicator" type="image/svg+xml" data="loading-indicator.svg">
+        Your browser does not support SVG
+    </object>
 
-    </div> <!-- /container -->
-</div>
+    <!-- Row of movies -->
+    <div id="video-list" class="row">
+
+    </div>
+
+</div> <!-- /container -->
 
 <!-- User profile modal -->
 <div id="user-profile-modal" class="modal fade" tabindex="-1" role="dialog">
