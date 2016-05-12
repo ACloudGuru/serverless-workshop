@@ -16,10 +16,6 @@ function base64encode (value) {
   return new Buffer(value).toString('base64');
 }
 
-function urlDecode(value) {
-  return decodeURI(value);
-}
-
 function generateExpirationDate() {
   var currentDate = new Date();
   currentDate = currentDate.setDate(currentDate.getDate() + 1);
