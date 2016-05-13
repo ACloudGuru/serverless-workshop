@@ -1,0 +1,70 @@
+{
+  "name": "ecdsa-sig-formatter",
+  "version": "1.0.5",
+  "description": "Translate ECDSA signatures between ASN.1/DER and JOSE-style concatenation",
+  "main": "src/ecdsa-sig-formatter.js",
+  "scripts": {
+    "check-style": "eslint .",
+    "pretest": "npm run check-style",
+    "test": "istanbul cover --root src _mocha -- spec",
+    "report-cov": "cat ./coverage/lcov.info | coveralls"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/Brightspace/node-ecdsa-sig-formatter.git"
+  },
+  "keywords": [
+    "ecdsa",
+    "der",
+    "asn.1",
+    "jwt",
+    "jwa",
+    "jsonwebtoken",
+    "jose"
+  ],
+  "author": {
+    "name": "D2L Corporation"
+  },
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/Brightspace/node-ecdsa-sig-formatter/issues"
+  },
+  "homepage": "https://github.com/Brightspace/node-ecdsa-sig-formatter#readme",
+  "dependencies": {
+    "base64-url": "^1.2.1"
+  },
+  "devDependencies": {
+    "bench": "^0.3.6",
+    "chai": "^3.4.1",
+    "coveralls": "^2.11.6",
+    "elliptic": "^6.1.0",
+    "eslint": "^1.10.3",
+    "eslint-config-brightspace": "^0.1.0",
+    "istanbul": "^0.4.2",
+    "jwk-to-pem": "^1.2.4",
+    "mocha": "^2.3.4"
+  },
+  "gitHead": "a7bed5fbdc737798c0f499156cdbeeeaf7138542",
+  "_id": "ecdsa-sig-formatter@1.0.5",
+  "_shasum": "0d0f32b638611f6b8f36ffd305a3e512ea5444e6",
+  "_from": "ecdsa-sig-formatter@>=1.0.0 <2.0.0",
+  "_npmVersion": "3.3.12",
+  "_nodeVersion": "5.4.1",
+  "_npmUser": {
+    "name": "d2l-travis-deploy",
+    "email": "d2ltravisdeploy@d2l.com"
+  },
+  "dist": {
+    "shasum": "0d0f32b638611f6b8f36ffd305a3e512ea5444e6",
+    "tarball": "http://registry.npmjs.org/ecdsa-sig-formatter/-/ecdsa-sig-formatter-1.0.5.tgz"
+  },
+  "maintainers": [
+    {
+      "name": "d2l-travis-deploy",
+      "email": "d2ltravisdeploy@d2l.com"
+    }
+  ],
+  "directories": {},
+  "_resolved": "https://registry.npmjs.org/ecdsa-sig-formatter/-/ecdsa-sig-formatter-1.0.5.tgz",
+  "readme": "ERROR: No README data found!"
+}

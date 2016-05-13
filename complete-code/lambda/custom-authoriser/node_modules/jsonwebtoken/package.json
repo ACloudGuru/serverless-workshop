@@ -1,0 +1,89 @@
+{
+  "name": "jsonwebtoken",
+  "version": "5.7.0",
+  "description": "JSON Web Token implementation (symmetric and asymmetric)",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha --require test/util/fakeDate"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/auth0/node-jsonwebtoken.git"
+  },
+  "keywords": [
+    "jwt"
+  ],
+  "author": {
+    "name": "auth0"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/auth0/node-jsonwebtoken/issues"
+  },
+  "dependencies": {
+    "jws": "^3.0.0",
+    "ms": "^0.7.1",
+    "xtend": "^4.0.1"
+  },
+  "devDependencies": {
+    "atob": "^1.1.2",
+    "chai": "^1.10.0",
+    "mocha": "^2.1.0",
+    "sinon": "^1.15.4"
+  },
+  "engines": {
+    "npm": ">=1.4.28"
+  },
+  "gitHead": "cb33aabc432408ed7f3826c2f5b5930313b63f1e",
+  "homepage": "https://github.com/auth0/node-jsonwebtoken#readme",
+  "_id": "jsonwebtoken@5.7.0",
+  "_shasum": "1c90f9a86ce5b748f5f979c12b70402b4afcddb4",
+  "_from": "jsonwebtoken@>=5.7.0 <6.0.0",
+  "_npmVersion": "2.14.12",
+  "_nodeVersion": "4.2.4",
+  "_npmUser": {
+    "name": "jfromaniello",
+    "email": "jfromaniello@gmail.com"
+  },
+  "maintainers": [
+    {
+      "name": "dschenkelman",
+      "email": "damian.schenkelman@gmail.com"
+    },
+    {
+      "name": "iaco",
+      "email": "sebastian.iacomuzzi@gmail.com"
+    },
+    {
+      "name": "jaredhanson",
+      "email": "jaredhanson@gmail.com"
+    },
+    {
+      "name": "jfromaniello",
+      "email": "jfromaniello@gmail.com"
+    },
+    {
+      "name": "pose",
+      "email": "albertopose@gmail.com"
+    },
+    {
+      "name": "rolodato",
+      "email": "rlopezdato@gmail.com"
+    },
+    {
+      "name": "woloski",
+      "email": "matiasw@gmail.com"
+    }
+  ],
+  "dist": {
+    "shasum": "1c90f9a86ce5b748f5f979c12b70402b4afcddb4",
+    "tarball": "https://registry.npmjs.org/jsonwebtoken/-/jsonwebtoken-5.7.0.tgz"
+  },
+  "_npmOperationalInternal": {
+    "host": "packages-5-east.internal.npmjs.com",
+    "tmp": "tmp/jsonwebtoken-5.7.0.tgz_1455625436794_0.319415409816429"
+  },
+  "directories": {},
+  "_resolved": "https://registry.npmjs.org/jsonwebtoken/-/jsonwebtoken-5.7.0.tgz",
+  "readme": "ERROR: No README data found!"
+}
