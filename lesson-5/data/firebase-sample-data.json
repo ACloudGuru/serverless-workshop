@@ -1,0 +1,28 @@
+{
+  "videos" : {
+    "entry1" : {
+      "source" : "https://serverless-video-transcoded.s3-accelerate.amazonaws.com/samples/avengers/samples/avengers-web-480p.mp4",
+      "transcoding" : false
+    },
+    "entry2" : {
+      "source" : "https://s3.amazonaws.com/serverless-video-transcoded/samples/batman-vs-superman/samples/batman-vs-superman-web-480p.mp4",
+      "transcoding" : false
+    },
+    "entry3" : {
+      "source" : "https://s3.amazonaws.com/serverless-video-transcoded/samples/disney/samples/disney-web-480p.mp4",
+      "transcoding" : false
+    },
+    "entry4" : {
+      "source" : "https://s3.amazonaws.com/serverless-video-transcoded/samples/mogali/samples/mogali-web-480p.mp4",
+      "transcoding" : false
+    },
+    "entry5" : {
+      "source" : "https://s3.amazonaws.com/serverless-video-transcoded/samples/starwars/samples/starwars-web-480p.mp4",
+      "transcoding" : true
+    },
+    "entry6" : {
+      "source" : "https://s3.amazonaws.com/serverless-video-transcoded/samples/xmen/samples/xmen-web-480p.mp4",
+      "transcoding" : false
+    }
+  }
+}
