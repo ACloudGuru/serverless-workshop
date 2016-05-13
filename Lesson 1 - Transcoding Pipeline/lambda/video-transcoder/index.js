@@ -1,7 +1,7 @@
 /**
  * Created by Peter Sbarski
  * Last Updated: 10/04/2016
- * Copyright: Manning
+ * Copyright: Manning Publications
  */
 'use strict';
 var AWS = require('aws-sdk');
