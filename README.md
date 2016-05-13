@@ -12,15 +12,15 @@ To get started, clone this repository to your local machine (or download it as a
 
 There are 5 lessons. Each lesson contains a PDF document of instruction on how to complete the lesson.
 
-Lesson 1 - Create a serverless transcoding pipeline in AWS
-Lesson 2 - Setup the web site & user authentication (Auth0)
-Lesson 3 - Create an API in the AWS cloud & authenticate calls
-Lesson 4 - Enable browser-based uploads of video files to S3
-Lesson 5 - Connect firebase to list videos
+ - Lesson 1 - Create a serverless transcoding pipeline in AWS
+ - Lesson 2 - Setup the web site & user authentication (Auth0)
+ - Lesson 3 - Create an API in the AWS cloud & authenticate calls
+ - Lesson 4 - Enable browser-based uploads of video files to S3
+ - Lesson 5 - Connect firebase to list videos
 
-## Pre-requisites
+## Prerequisites
 
-## Sample Videos
+## Sample Video Files
 
 In this workshop you'll need to upload videos to the cloud. Since videos can be large, we've trimmed some Hollywood movies trailers to about 5-10 seconds each, to keep the file size relative small:
 
