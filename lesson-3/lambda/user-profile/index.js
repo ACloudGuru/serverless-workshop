@@ -1,28 +1,26 @@
 /**
  * Created by Peter Sbarski
  * Last Updated: 28/03/2016
- * Copyright: Manning Publications Co 2016
  */
 'use strict';
 
 var jwt = require('jsonwebtoken');
 var request = require('request');
-var env = require('auth0-variables');
-var secret = env.AUTH0_SECRET;
+var env = require('./config');
 
-exports.handler = function(event, context){
+exports.handler = function(event, context, callback){
     if (!event.authToken) {
-    	context.fail('Could not find authToken');
+    	callback('Could not find authToken');
     	return;
     }
 
     var token = event.authToken.split(' ')[1];
 
-    var secretBuffer = new Buffer(secret, 'base64');
+    var secretBuffer = new Buffer(env.AUTH0_SECRET, 'base64');
     jwt.verify(token, secretBuffer, function(err, decoded){
     	if(err){
     		console.log('Failed jwt verification: ', err, 'auth: ', event.authToken);
-    		context.fail('Authorization Failed');
+    		callback('Authorization Failed');
     	} else {
 
         var body = {
@@ -38,9 +36,9 @@ exports.handler = function(event, context){
 
         request(options, function(error, response, body){
           if (!error && response.statusCode === 200) {
-            context.succeed(body);
+            callback(null, body);
           } else {
-            context.fail(error);
+            callback(error);
           }
         });
     	}
