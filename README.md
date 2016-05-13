@@ -8,9 +8,9 @@ In this workshop, we build a completely serverless video sharing web-site, compl
  - Push-based, event-driven updates to the web-site. Users see new videos automatically, no browser refreshes needed
  - The ability to play video files hosted on scalable cloud storage.
  
-To get started, clone this repository to your local machine (or download it as a ZIP file)
+## Lessons
 
-There are 5 lessons. Each lesson contains a PDF document of instruction on how to complete the lesson.
+There are 5 lessons. 
 
  - Lesson 1 - Create a serverless transcoding pipeline in AWS
  - Lesson 2 - Setup the web site & user authentication (Auth0)
@@ -18,7 +18,11 @@ There are 5 lessons. Each lesson contains a PDF document of instruction on how t
  - Lesson 4 - Enable browser-based uploads of video files to S3
  - Lesson 5 - Connect firebase to list videos
 
-## Prerequisites
+## Get Started
+
+To get started, clone this repository to your local machine (or download it as a ZIP file).
+
+There is a folder for each lesson. Each lesson contains a PDF document of instruction on how to complete the lesson.
 
 ## Sample Video Files
 
