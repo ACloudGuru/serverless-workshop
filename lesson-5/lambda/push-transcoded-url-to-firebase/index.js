@@ -7,8 +7,6 @@ exports.handler = function(event, context, callback){
     var key = event.Records[0].s3.object.key;
     var bucket = event.Records[0].s3.bucket.name;
 
-    var regionIdentifier = config.BUCKET_REGION === 'us-east-1' ? 's3' : 's3-' + config.BUCKET_REGION;
-
     var videoUrl = config.S3 + '/' + key;
 
     // construct S3 URL based on bucket and key
