@@ -26,9 +26,10 @@ var videoController = {
 
             if (newVideoElement.is('.video-playing')) {
                 video.pause();
+                $(video).removeAttr('controls'); // remove controls
             }
             else {
-                video.currentTime = 0;
+                $(video).attr('controls', ''); // show controls
                 video.play();
             }
 
