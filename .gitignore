@@ -5,6 +5,8 @@
 # Builds
 Lambda-Deployment.zip
 
+node_modules 
+
 # Logs
 logs
 *.log
