@@ -1,8 +1,3 @@
-/**
- * Created by Peter Sbarski
- * Last Updated: 10/04/2016
- * Copyright: Manning Publications
- */
 'use strict';
 var AWS = require('aws-sdk');
 var config = require('./config');
