@@ -17,7 +17,6 @@
       "transcoding" : false
     },
     "entry5" : {
-      "source" : "https://s3.amazonaws.com/serverless-video-transcoded/samples/starwars/samples/starwars-web-480p.mp4",
       "transcoding" : true
     },
     "entry6" : {

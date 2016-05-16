@@ -38,7 +38,7 @@ exports.handler = function(event, context, callback){
     		console.log('Failed jwt verification: ', err, 'auth: ', event.authorizationToken);
     		callback('Authorization Failed');
     	} else {
-    		ccallback(null, generatePolicy('user', 'allow', event.methodArn));
+    		callback(null, generatePolicy('user', 'allow', event.methodArn));
     	}
     })
 };
