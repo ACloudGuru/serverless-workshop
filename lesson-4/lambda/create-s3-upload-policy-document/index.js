@@ -1,8 +1,3 @@
-/**
- * Created by Peter Sbarski
- * Last Updated: 12/05/2016
- * Copyright: Manning Publications Co 2016
- */
 'use strict';
 
 var AWS = require('aws-sdk');
