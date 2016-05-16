@@ -1,8 +1,3 @@
-/**
- * Created by Peter Sbarski
- * Last Updated: 10/04/2016
- * Copyright: Manning
- */
 'use strict';
 var AWS = require('aws-sdk');
 var Firebase = require('firebase');

@@ -1,6 +1,6 @@
 var env={};
 env.BUCKET_REGION = 'us-east-1';
-env.FIREBASE_URL = 'https://intense-heat-7654.firebaseio.com';
-env.FIREBASE_SECRET = 'tuOorDLFVkMv3H6uXrWxsOv3YXRn20ml22Ggusuu';
-env.S3 = 'https://serverless-video-transcoded.s3-accelerate.amazonaws.com';
+env.FIREBASE_URL = 'YOUR FIREBASE URL HERE';
+env.FIREBASE_SECRET = 'YOUR FIREBASE SECRET HERE';
+env.S3 = 'https://s3.amazonaws.com/peter-transcoded-bucket';
 module.exports = env;
