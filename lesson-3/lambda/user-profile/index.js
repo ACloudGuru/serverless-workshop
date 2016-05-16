@@ -4,7 +4,6 @@
  */
 'use strict';
 
-var jwt = require('jsonwebtoken');
 var request = require('request');
 var env = require('./config');
 
@@ -16,31 +15,22 @@ exports.handler = function(event, context, callback){
 
     var token = event.authToken.split(' ')[1];
 
-    var secretBuffer = new Buffer(env.AUTH0_SECRET, 'base64');
-    jwt.verify(token, secretBuffer, function(err, decoded){
-    	if(err){
-    		console.log('Failed jwt verification: ', err, 'auth: ', event.authToken);
-    		callback('Authorization Failed');
-    	} else {
+    var body = {
+        'id_token': token
+    };
 
-        var body = {
-          'id_token': token
-        };
+    var options = {
+        url: 'https://' +  env.AUTH0_DOMAIN + '/tokeninfo',
+        method: 'POST',
+        json: true,
+        body: body
+    };
 
-        var options = {
-          url: 'https://' +  env.AUTH0_DOMAIN + '/tokeninfo',
-          method: 'POST',
-          json: true,
-          body: body
-        };
-
-        request(options, function(error, response, body){
-          if (!error && response.statusCode === 200) {
+    request(options, function(error, response, body){
+        if (!error && response.statusCode === 200) {
             callback(null, body);
-          } else {
+        } else {
             callback(error);
-          }
-        });
-    	}
-    })
+        }
+    });
 };

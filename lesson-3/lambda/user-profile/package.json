@@ -8,7 +8,6 @@
     "predeploy": "zip -r Lambda-Deployment.zip * -x *.zip *.json *.log"
   },
   "dependencies": {
-    "jsonwebtoken": "^5.7.0",
     "request": "^2.69.0"
   },
   "author": "Peter Sbarski",
