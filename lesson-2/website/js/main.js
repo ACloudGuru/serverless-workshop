@@ -3,4 +3,3 @@
         userController.init(configConstants);
     });
 }());
-
