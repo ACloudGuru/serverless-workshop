@@ -1,7 +1,7 @@
 var configConstants = {
     auth0: {
-      domain: 'cloudmonitor.auth0.com',
-  		clientId: 'r8PQy2Qdr91xU3KTGQ01e598bwee8MQr'
+        domain: 'YOUR_AUTH0_DOMAIN_HERE',
+        clientId: 'YOUR_AUTH0_CLIENT_ID_HERE'
     },
-    apiBaseUrl: 'https://aljgfttqq9.execute-api.us-east-1.amazonaws.com/dev/'
+    apiBaseUrl: 'YOUR_API_BASE_URL_HERE_MUST_END_WITH_TRAILING_SLASH'
 };
