@@ -3,7 +3,7 @@ var AWS = require('aws-sdk');
 var Firebase = require('firebase');
 var config = require('./config');
 
-exports.handler = function(event, context, callback){
+exports.handler = function(event, context){
     var key = event.Records[0].s3.object.key;
     var bucket = event.Records[0].s3.bucket.name;
 
@@ -23,9 +23,13 @@ exports.handler = function(event, context, callback){
     firebaseRef.child('videos').child(uniqueVideoKey).set({
         transcoding: false,
         source: videoUrl
-    }).catch(function(err) {
+    })
+    .then(function() {
+        context.succeed("Updated Firebase");
+        return;
+    })
+    .catch(function(err) {
         console.log("Error writing transcoded video location to firebase");
-        console.log(err);
-        callback(err);
+        context.fail(err);
     });
 };
