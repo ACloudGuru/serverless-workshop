@@ -28,11 +28,9 @@ var uploadController = {
         });
     },
     upload: function (file, data, that) {
-
         this.uiElements.uploadButtonContainer.hide();
         this.uiElements.uploadProgressBar.show();
         this.uiElements.uploadProgressBar.find('.progress-bar').css('width', '0');
-
 
         var fd = new FormData();
         fd.append('key', data.key)
