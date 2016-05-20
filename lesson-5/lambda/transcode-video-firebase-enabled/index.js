@@ -7,7 +7,7 @@ var elasticTranscoder = new AWS.ElasticTranscoder({
     region: config.ELASTIC_TRANSCODER_REGION
 });
 
-function pushVideoEntryToFirebase(key) {
+function pushVideoEntryToFirebase(key, context) {
 
     console.log("Adding video entry to firebase at key:", key);
 
@@ -20,15 +20,15 @@ function pushVideoEntryToFirebase(key) {
         })
         .then(function () {
             console.log("Video record saved to firebase");
+            context.succeed(null, "Success");
         })
         .catch(function (err) {
             console.log("Error saving video record to firebase");
-            console.log(err);
+            context.fail(err);
         });
 }
 
-exports.handler = function (event, context, callback) {
-
+exports.handler = function (event, context) {
     var key = event.Records[0].s3.object.key;
     console.log("Object key:", key);
 
@@ -38,14 +38,14 @@ exports.handler = function (event, context, callback) {
 
     //remove the extension
     var outputKey = sourceKey.split('.')[0];
-    console.log("Output key:", sourceKey);
+    console.log("Output key:", outputKey);
 
     // get the unique video key (the folder name)
     var uniqueVideoKey = outputKey.split('/')[0];
+    console.log("Unique Video Key:", uniqueVideoKey);
 
     var params = {
         PipelineId: config.ELASTIC_TRANSCODER_PIPELINE_ID,
-        OutputKeyPrefix: outputKey + '/',
         Input: {
             Key: sourceKey
         },
@@ -60,15 +60,13 @@ exports.handler = function (event, context, callback) {
     elasticTranscoder.createJob(params, function (error, data) {
         if (error) {
             console.log("Error creating elastic transcoder job.");
-            console.log(error);
-
-            callback(error);
+            context.fail(error);
             return;
         }
 
         // the transcoding job started, so let's make a record in firebase
         // that the UI can show right away
         console.log("Elastic transcoder job created successfully");
-        pushVideoEntryToFirebase(uniqueVideoKey);
+        pushVideoEntryToFirebase(uniqueVideoKey, context);
     });
 };
