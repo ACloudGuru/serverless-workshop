@@ -1,6 +1,6 @@
 var configConstants = {
     auth0: {
-        domain: 'samkroon.auth0.com',
-        clientId: 'lXdInlGEHmKqFF2d60I6VpSS41uvpIHM'
+        domain: 'YOUR_AUTH0_DOMAIN_HERE',
+        clientId: 'YOUR_AUTH0_CLIENT_ID_HERE'
     }
 };

@@ -23,6 +23,8 @@ var uploadController = {
             $.get(requestDocumentUrl, function (data, status) {
                 that.upload(file, data, that)
             });
+
+            this.value = null;
         });
     },
     upload: function (file, data, that) {

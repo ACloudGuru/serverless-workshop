@@ -1,8 +1,8 @@
 var configConstants = {
     auth0: {
-        domain: 'samkroon.auth0.com',
-        clientId: 'lXdInlGEHmKqFF2d60I6VpSS41uvpIHM'
+        domain: 'YOUR_AUTH0_DOMAIN_HERE',
+        clientId: 'YOUR_AUTH0_CLIENT_ID_HERE'
     },
-    apiBaseUrl: 'https://tlzyo7a7o9.execute-api.us-east-1.amazonaws.com/dev/',
-    firebaseUrl: 'https://amber-heat-9286.firebaseio.com'
+    apiBaseUrl: 'YOUR_API_BASE_URL_HERE_MUST_END_WITH_TRAILING_SLASH',
+    firebaseUrl: 'YOUR_FIRE_BASE_URL_HERE_NO_TRAILING_SLASH'
 };
