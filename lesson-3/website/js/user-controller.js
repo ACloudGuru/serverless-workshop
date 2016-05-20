@@ -93,7 +93,7 @@ var userController = {
         });
 
         this.uiElements.profileButton.click(function (e) {
-            var url = that.data.config.apiBaseUrl + 'user-profile';
+            var url = that.data.config.apiBaseUrl + '/user-profile';
 
             $.get(url, function (data, status) {
                 // save user profile data in the modal

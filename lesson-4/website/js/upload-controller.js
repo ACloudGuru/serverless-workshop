@@ -18,7 +18,7 @@ var uploadController = {
 
         this.uiElements.uploadButton.on('change', function (result) {
             var file = $('#upload').get(0).files[0];
-            var requestDocumentUrl = that.data.config.apiBaseUrl + 's3-policy-document?filename=' + encodeURI(file.name);
+            var requestDocumentUrl = that.data.config.apiBaseUrl + '/s3-policy-document?filename=' + encodeURI(file.name);
 
             $.get(requestDocumentUrl, function (data, status) {
                 that.upload(file, data, that)
@@ -28,11 +28,9 @@ var uploadController = {
         });
     },
     upload: function (file, data, that) {
-
         this.uiElements.uploadButtonContainer.hide();
         this.uiElements.uploadProgressBar.show();
         this.uiElements.uploadProgressBar.find('.progress-bar').css('width', '0');
-
 
         var fd = new FormData();
         fd.append('key', data.key)
