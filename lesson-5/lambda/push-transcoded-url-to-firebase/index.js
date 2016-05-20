@@ -26,7 +26,6 @@ exports.handler = function(event, context){
     })
     .then(function() {
         context.succeed("Updated Firebase");
-        return;
     })
     .catch(function(err) {
         console.log("Error writing transcoded video location to firebase");
