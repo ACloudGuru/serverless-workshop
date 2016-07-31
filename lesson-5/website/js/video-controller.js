@@ -62,7 +62,17 @@ var videoController = {
     connectToFirebase: function () {
         var that = this;
 
-        var firebaseRef = new Firebase(this.data.config.firebaseUrl);
+        /* PASTE CONFIG HERE */
+        // var config = {
+        //   apiKey: "",
+        //   authDomain: "",
+        //   databaseURL: "",
+        //   storageBucket: "",
+        // };
+
+        firebase.initializeApp(config);
+
+        var firebaseRef = firebase.database().ref();
 
         var firebaseVideoNodeRef = firebaseRef.child('videos');
 
@@ -72,7 +82,7 @@ var videoController = {
                 that.uiElements.loadingIndicator.hide();
 
                 // add elements to the screen for the new video
-                that.addVideoToScreen(childSnapshot.key(), childSnapshot.val());
+                that.addVideoToScreen(childSnapshot.key, childSnapshot.val());
             });
 
         // fired when a movie is updated
@@ -80,14 +90,14 @@ var videoController = {
             .on('child_changed', function (childSnapshot, prevChildKey) {
 
                 // update the video object on screen with the new video details from firebase
-                that.updateVideoOnScreen(that.getElementForVideo(childSnapshot.key()), childSnapshot.val());
+                that.updateVideoOnScreen(that.getElementForVideo(childSnapshot.key), childSnapshot.val());
             });
 
         firebaseVideoNodeRef
             .on('child_removed', function (childSnapshot, prevChildKey) {
 
                 // update the video object on screen with the new video details from firebase
-                that.getElementForVideo(childSnapshot.key()).remove();
+                that.getElementForVideo(childSnapshot.key.remove());
             });
     }
 };

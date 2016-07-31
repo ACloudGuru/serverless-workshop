@@ -1,6 +1,6 @@
 'use strict';
 var AWS = require('aws-sdk');
-var Firebase = require('firebase');
+var firebase = require('firebase');
 var config = require('./config');
 
 exports.handler = function(event, context){
@@ -17,18 +17,20 @@ exports.handler = function(event, context){
     var uniqueVideoKey = sourceKey.split('/')[0];
 
     // save the URL to firebase
-    var firebaseRef = new Firebase(config.FIREBASE_URL);
+    firebase.initializeApp({
+      serviceAccount: config.SERVICE_ACCOUNT,
+      databaseURL: config.DATABASE_URL
+    });
+
+    var database = firebase.database().ref();
 
     // update the unique entry for this video in firebase
-    firebaseRef.child('videos').child(uniqueVideoKey).set({
+    database.child('videos').child(uniqueVideoKey).set({
         transcoding: false,
         source: videoUrl
-    })
-    .then(function() {
-        context.succeed("Updated Firebase");
-    })
-    .catch(function(err) {
+    }).catch(function(err) {
         console.log("Error writing transcoded video location to firebase");
-        context.fail(err);
+        console.log(err);
+        callback(err);
     });
 };

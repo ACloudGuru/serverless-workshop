@@ -1,6 +1,6 @@
 'use strict';
 var AWS = require('aws-sdk');
-var Firebase = require('firebase');
+var firebase = require('firebase');
 var config = require('./config');
 
 var elasticTranscoder = new AWS.ElasticTranscoder({
@@ -11,20 +11,24 @@ function pushVideoEntryToFirebase(key, context) {
 
     console.log("Adding video entry to firebase at key:", key);
 
-    var firebaseRef = new Firebase(config.FIREBASE_URL);
+    firebase.initializeApp({
+      serviceAccount: config.SERVICE_ACCOUNT,
+      databaseURL: config.DATABASE_URL
+    });
+
+    var database = firebase.database().ref();
 
     // create a unique entry for this video in firebase
-    firebaseRef.child('videos').child(key)
+    database.child('videos').child(key)
         .set({
             transcoding: true
         })
         .then(function () {
             console.log("Video record saved to firebase");
-            context.succeed(null, "Success");
         })
         .catch(function (err) {
             console.log("Error saving video record to firebase");
-            context.fail(err);
+            console.log(err);
         });
 }
 
