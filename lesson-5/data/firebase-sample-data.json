@@ -1,26 +1,27 @@
 {
   "videos" : {
-    "entry1" : {
-      "source" : "https://serverless-video-transcoded.s3-accelerate.amazonaws.com/samples/avengers/samples/avengers-web-480p.mp4",
+    "1cbc009928a73cb2a49614eef09a1a5d64bd66b4" : {
+      "source" : "https://s3.amazonaws.com/serverless-video-transcoded/1cbc009928a73cb2a49614eef09a1a5d64bd66b4/batman-vs-superman/1cbc009928a73cb2a49614eef09a1a5d64bd66b4/batman-vs-superman-web-480p.mp4",
       "transcoding" : false
     },
-    "entry2" : {
-      "source" : "https://s3.amazonaws.com/serverless-video-transcoded/samples/batman-vs-superman/samples/batman-vs-superman-web-480p.mp4",
+    "49794696e7aef1b79bd10310cc041e1570d001cd" : {
+      "source" : "https://s3.amazonaws.com/serverless-video-transcoded/49794696e7aef1b79bd10310cc041e1570d001cd/avengers/49794696e7aef1b79bd10310cc041e1570d001cd/avengers-web-480p.mp4",
       "transcoding" : false
     },
-    "entry3" : {
-      "source" : "https://s3.amazonaws.com/serverless-video-transcoded/samples/disney/samples/disney-web-480p.mp4",
+    "5305f31fd4005ced84110f64b0f75cb6e64fad63" : {
+      "source" : "https://s3.amazonaws.com/serverless-video-transcoded/5305f31fd4005ced84110f64b0f75cb6e64fad63/disney/5305f31fd4005ced84110f64b0f75cb6e64fad63/disney-web-480p.mp4",
       "transcoding" : false
     },
-    "entry4" : {
-      "source" : "https://s3.amazonaws.com/serverless-video-transcoded/samples/mogali/samples/mogali-web-480p.mp4",
+    "7ec8df22af9b993d9344b8441ded7e232fee8e9e" : {
+      "source" : "https://s3.amazonaws.com/serverless-video-transcoded/7ec8df22af9b993d9344b8441ded7e232fee8e9e/xmen-web-480p/7ec8df22af9b993d9344b8441ded7e232fee8e9e/xmen-web-480p-web-480p.mp4",
       "transcoding" : false
     },
-    "entry5" : {
-      "transcoding" : true
+    "9b2589dedda8b58276201f6b8b453325ce889354" : {
+      "source" : "https://s3.amazonaws.com/serverless-video-transcoded/9b2589dedda8b58276201f6b8b453325ce889354/mogali-web-480p/9b2589dedda8b58276201f6b8b453325ce889354/mogali-web-480p-web-480p.mp4",
+      "transcoding" : false
     },
-    "entry6" : {
-      "source" : "https://s3.amazonaws.com/serverless-video-transcoded/samples/xmen/samples/xmen-web-480p.mp4",
+    "fb59a060590a2adf9e0131140a91206f8e020b1b" : {
+      "source" : "https://s3.amazonaws.com/serverless-video-transcoded/fb59a060590a2adf9e0131140a91206f8e020b1b/starwars/fb59a060590a2adf9e0131140a91206f8e020b1b/starwars-web-480p.mp4",
       "transcoding" : false
     }
   }
