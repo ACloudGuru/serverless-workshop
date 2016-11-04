@@ -8,6 +8,7 @@ var elasticTranscoder = new AWS.ElasticTranscoder({
 
 exports.handler = function(event, context, callback){
     console.log('Welcome');
+    console.log('event: ' + JSON.stringify(event));
 
     var key = event.Records[0].s3.object.key;
 
@@ -42,5 +43,6 @@ exports.handler = function(event, context, callback){
         if (error){
             callback(error);
         }
+        console.log('elasticTranscoder callback data: ' + JSON.stringify(data));
     });
 };
