@@ -1,0 +1,28 @@
+{
+  "videos" : {
+    "1dd4a785fdd626b8d9339c3e4e4e52cac8b39acf" : {
+      "source" : "https://s3.amazonaws.com/serverlesstube-sample-videos/1dd4a785fdd626b8d9339c3e4e4e52cac8b39acf/bridge/1dd4a785fdd626b8d9339c3e4e4e52cac8b39acf/bridge-web-480p.mp4",
+      "transcoding" : false
+    },
+    "29afea76b837be052d6013ef05becc6d3f25237b" : {
+      "source" : "https://s3.amazonaws.com/serverlesstube-sample-videos/29afea76b837be052d6013ef05becc6d3f25237b/mirage/29afea76b837be052d6013ef05becc6d3f25237b/mirage-web-480p.mp4",
+      "transcoding" : false
+    },
+    "ba8d43c22f03306a78853d74b9c0b7d2c4c2bdba" : {
+      "source" : "https://s3.amazonaws.com/serverlesstube-sample-videos/ba8d43c22f03306a78853d74b9c0b7d2c4c2bdba/dog/ba8d43c22f03306a78853d74b9c0b7d2c4c2bdba/dog-web-480p.mp4",
+      "transcoding" : false
+    },
+    "c38dd499afa1666b77de41a73b22b3d9d27952c2" : {
+      "source" : "https://s3.amazonaws.com/serverlesstube-sample-videos/c38dd499afa1666b77de41a73b22b3d9d27952c2/death-valley/c38dd499afa1666b77de41a73b22b3d9d27952c2/death-valley-web-480p.mp4",
+      "transcoding" : false
+    },
+    "eea1537dd67a308e17f20b840b6eb5724d1635c0" : {
+      "source" : "https://s3.amazonaws.com/serverlesstube-sample-videos/eea1537dd67a308e17f20b840b6eb5724d1635c0/stream/eea1537dd67a308e17f20b840b6eb5724d1635c0/stream-web-480p.mp4",
+      "transcoding" : false
+    },
+    "fe86876b474f28652b4e1f483abe50b04653efb2" : {
+      "source" : "https://s3.amazonaws.com/serverlesstube-sample-videos/fe86876b474f28652b4e1f483abe50b04653efb2/snow-ball/fe86876b474f28652b4e1f483abe50b04653efb2/snow-ball-web-480p.mp4",
+      "transcoding" : false
+    }
+  }
+}
