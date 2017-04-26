@@ -97,7 +97,7 @@ var videoController = {
             .on('child_removed', function (childSnapshot, prevChildKey) {
 
                 // update the video object on screen with the new video details from firebase
-                that.getElementForVideo(childSnapshot.key.remove());
+                that.getElementForVideo(childSnapshot.key).remove();
             });
     }
 };
