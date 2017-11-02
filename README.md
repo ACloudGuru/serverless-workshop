@@ -28,7 +28,7 @@ There is a folder for each lesson. Each lesson contains a PDF document of instru
 
 In this workshop you'll need to upload videos to the cloud. Since videos can be large, we've trimmed some Hollywood movies trailers to about 5-10 seconds each, to keep the file size relative small:
 
-[Download sample movie trailers](https://drive.google.com/file/d/0B6ocHaxFaZT-T2dWTnhyaVg3RUk/view?usp=sharing)
+[Download sample movie trailers](https://github.com/ACloudGuru/serverless-workshop/blob/master/sample-videos.zip)
 
 ## Our Book
 [Serverless Architectures on AWS](https://www.manning.com/books/serverless-architectures-on-aws?a_aid=serverless-architectures-on-aws&a_bid=145280de) is our book that covers serverless architectures in more detail. It is a great companion to this course as it provides more depth to everything we have learnt today. It is recommended if you want to explore serverless architectures further.
