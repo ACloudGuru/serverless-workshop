@@ -36,6 +36,11 @@ body {
 	margin-bottom: 30px;
 }
 
+#delete-video-button {
+	display: none;
+	margin-bottom: 30px;	
+}
+
 .btn-file {
 	position: relative;
 	overflow: hidden;
