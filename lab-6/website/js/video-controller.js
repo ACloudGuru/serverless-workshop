@@ -71,12 +71,11 @@ var videoController = {
         $.ajax({
             url: apiUrl,
             type: 'DELETE',
-        }).done(function (response) {
-            console.log('Delete done!');
-        }).fail(function (response) {
-            console.log('Failed to delete');
+        }).always(function (response) {
+            console.log('Call delete video API done.');
+            console.log(response);
             // show delete video button
-            deleteButton.css('display', 'inline-block');            
+            deleteButton.css('display', 'inline-block');                
         });
     },
     updateVideoOnScreen: function(videoElement, videoObj) {
