@@ -5,41 +5,79 @@ var videoController = {
     uiElements: {
         videoCardTemplate: null,
         videoList: null,
-        loadingIndicator: null
+        loadingIndicator: null,
+        profileButton: null        
     },
     init: function (config) {
         this.uiElements.videoCardTemplate = $('#video-template');
         this.uiElements.videoList = $('#video-list');
         this.uiElements.loadingIndicator = $('#loading-indicator');
-
+        this.uiElements.profileButton = $('#user-profile');
+        
         this.data.config = config;
 
         this.connectToFirebase();
     },
     addVideoToScreen: function (videoId, videoObj) {
+        var that = this;
+        
         // clone the template video element
         var newVideoElement = this.uiElements.videoCardTemplate.clone().attr('id', videoId);
 
         newVideoElement.click(function() {
+            // the user has clicked on the delete video button
+            var isDelete = false;
+            var targetID = $(event.target).get(0).id;
+            if (targetID == $('#delete-video-button').get(0).id
+                || targetID == $('#delete').get(0).id) {
+                isDelete = true;
+            }
+
             // the user has clicked on the video... let's play it, or pause it depending on state
             var video = newVideoElement.find('video').get(0);
 
             if (newVideoElement.is('.video-playing')) {
                 video.pause();
                 $(video).removeAttr('controls'); // remove controls
+                newVideoElement.removeClass('video-playing');
             }
             else {
-                $(video).attr('controls', ''); // show controls
-                video.play();
+                if (!isDelete) {
+                    newVideoElement.addClass('video-playing');
+                    $(video).attr('controls', ''); // show controls
+                    video.play();
+                }
             }
 
-            newVideoElement.toggleClass('video-playing');
-
+            // call delete function
+            if (isDelete) {
+                that.deleteVideo(nvideoElement);
+            }
         });
 
         this.updateVideoOnScreen(newVideoElement, videoObj);
 
         this.uiElements.videoList.prepend(newVideoElement);
+    },
+    deleteVideo: function (videoElement) {
+        // get video id to be deleted
+        var videoId = videoElement.get(0).id;
+        
+        // get delete video button and hide
+        var deleteButton = videoElement.find('#delete-video-button');
+        deleteButton.hide()
+
+        var apiUrl = this.data.config.apiBaseUrl + '/delete-video?id=' + encodeURI(videoId);
+        $.ajax({
+            url: apiUrl,
+            type: 'DELETE',
+        }).done(function (response) {
+            console.log('Delete done!');
+        }).fail(function (response) {
+            console.log('Failed to delete');
+            // show delete video button
+            deleteButton.css('display', 'inline-block');            
+        });
     },
     updateVideoOnScreen: function(videoElement, videoObj) {
 
@@ -51,6 +89,11 @@ var videoController = {
             // the video is not transcoding... show the video and hide the spinner
             videoElement.find('video').show();
             videoElement.find('.transcoding-indicator').hide();
+
+            // show delete video button
+            if (that.uiElements.profileButton.is(':visible')) {                
+                videoElement.find('#delete-video-button').css('display', 'inline-block');
+            }
         }
 
         // set the video URL

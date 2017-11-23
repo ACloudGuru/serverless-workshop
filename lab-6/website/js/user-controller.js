@@ -56,6 +56,11 @@ var userController = {
             this.uiElements.profileNameLabel.text(profile.nickname);
             this.uiElements.profileImage.attr('src', profile.picture);
             this.uiElements.uploadButton.css('display', 'inline-block');
+
+            // show video delete button
+            $('.video-card').each(function(i, elem) {
+                $(elem).find("#delete-video-button").css('display', 'inline-block');
+            });               
         }
 
         this.uiElements.loginButton.toggle(!showAuthenticationElements);
@@ -94,6 +99,11 @@ var userController = {
             that.uiElements.profileButton.hide();
             that.uiElements.loginButton.show();
             that.uiElements.uploadButton.hide();
+
+            // hide video delete button
+            $('.video-card').each(function(i, elem) {
+                $(elem).find("#delete-video-button").hide();
+            });    
         });
 
         this.uiElements.profileButton.click(function (e) {
