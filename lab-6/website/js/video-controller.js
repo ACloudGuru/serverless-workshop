@@ -104,16 +104,8 @@ var videoController = {
     connectToFirebase: function () {
         var that = this;
 
-        /* PASTE CONFIG HERE */
-        // var config = {
-        //   apiKey: "",
-        //   authDomain: "",
-        //   databaseURL: "",
-        //   storageBucket: "",
-        // };
-
-        firebase.initializeApp(config);
-
+        firebase.initializeApp(that.data.config.firebase);
+        
         var firebaseRef = firebase.database().ref();
 
         var firebaseVideoNodeRef = firebaseRef.child('videos');
