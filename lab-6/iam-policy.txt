@@ -4,11 +4,14 @@
     {
       "Action": [
         "s3:DeleteObject",
-        "s3:ListObjects"
+        "s3:ListBucket",
+        "s3:GetObject"
       ],
       "Effect": "Allow",
       "Resource": [
+          "arn:aws:s3:::YOUR_UPLOAD_BUCKET_NAME",
           "arn:aws:s3:::YOUR_UPLOAD_BUCKET_NAME/*",
+          "arn:aws:s3:::YOUR_TRANSCODED_BUCKET_NAME",
           "arn:aws:s3:::YOUR_TRANSCODED_BUCKET_NAME/*"
       ]
     },
