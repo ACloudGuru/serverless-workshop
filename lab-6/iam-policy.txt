@@ -18,7 +18,7 @@
       ],
       "Effect": "Allow",
       "Resource": [
-          "arn:aws:sns:YOUR_TOPIC_ARN_NAME"
+          "YOUR_TOPIC_ARN_NAME"
       ]
     }
   ]
