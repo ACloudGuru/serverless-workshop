@@ -24,7 +24,7 @@ var videoController = {
         // clone the template video element
         var newVideoElement = this.uiElements.videoCardTemplate.clone().attr('id', videoId);
 
-        newVideoElement.click(function() {
+        newVideoElement.click(function(event) {
             // the user has clicked on the delete video button
             var isDelete = false;
             var targetID = $(event.target).get(0).id;
@@ -51,7 +51,7 @@ var videoController = {
 
             // call delete function
             if (isDelete) {
-                that.deleteVideo(nvideoElement);
+                that.deleteVideo(newVideoElement);
             }
         });
 
@@ -79,7 +79,8 @@ var videoController = {
         });
     },
     updateVideoOnScreen: function(videoElement, videoObj) {
-
+        var that = this;
+        
         if (videoObj.transcoding) {
             // the video is currently transcoding... hide the video and show the spinner
             videoElement.find('video').hide();
@@ -104,6 +105,7 @@ var videoController = {
     connectToFirebase: function () {
         var that = this;
 
+        // Initialize Firebase
         firebase.initializeApp(that.data.config.firebase);
         
         var firebaseRef = firebase.database().ref();
