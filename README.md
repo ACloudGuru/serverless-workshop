@@ -10,13 +10,14 @@ In this workshop, we build a completely serverless video sharing web-site, compl
 
 ## Lessons
 
-There are 5 lessons.
+There are 6 lessons.
 
  - Lesson 1 - Create a serverless transcoding pipeline in AWS
  - Lesson 2 - Setup the web site & user authentication (Auth0)
  - Lesson 3 - Create an API in the AWS cloud & authenticate calls
  - Lesson 4 - Enable browser-based uploads of video files to S3
  - Lesson 5 - Connect firebase to list videos
+ - Lesson 6 - Delete video from S3 and Firebase
 
 ## Get Started
 
