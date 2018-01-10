@@ -20,33 +20,48 @@ var userController = {
         this.uiElements.uploadButton = $('#upload-video-button');
 
         this.data.config = config;
-        this.data.auth0Lock = new Auth0Lock(config.auth0.clientId, config.auth0.domain);
+        var params = {
+            autoclose: true,
+            auth: {
+                params: {
+                    scope: 'openid profile email user_metadata picture'
+                },
+                responseType: 'id_token token'
+            }
+        };
+        this.data.auth0Lock = new Auth0Lock(config.auth0.clientId, config.auth0.domain, params);
 
         // check to see if the user has previously logged in
-        var idToken = localStorage.getItem('userToken');
-
-        if (idToken) {
-            this.configureAuthenticatedRequests();
-
-            var that = this;
-
-            this.data.auth0Lock.getProfile(idToken, function (err, profile) {
-                if (err) {
-                    return alert('There was an error getting the profile: ' + err.message);
-                }
-                // Display user information
-                that.showUserAuthenticationDetails(profile);
-
-            });
-        }
+        var accessToken = localStorage.getItem('accessToken');
+        var idToken = localStorage.getItem('idToken');
 
         this.wireEvents();
+        
+        if (accessToken && idToken) {
+            this.getUserProfile(accessToken, idToken);
+        }  
     },
     configureAuthenticatedRequests: function () {
         $.ajaxSetup({
             'beforeSend': function (xhr) {
-                xhr.setRequestHeader('Authorization', 'Bearer ' + localStorage.getItem('userToken'));
+                xhr.setRequestHeader('Authorization', 'Bearer ' + localStorage.getItem('idToken'));
             }
+        });
+    },
+    getUserProfile: function (accessToken, idToken) {
+        var that = this;
+        this.data.auth0Lock.getUserInfo(accessToken, function(error, profile) {
+            
+            if (error) {
+                return alert('There was an error getting the profile: ' + err.message);
+            }
+        
+            localStorage.setItem('accessToken', accessToken);
+            localStorage.setItem('idToken', idToken);
+            
+            that.configureAuthenticatedRequests();
+            that.showUserAuthenticationDetails(profile);
+            
         });
     },
     showUserAuthenticationDetails: function (profile) {
@@ -66,29 +81,12 @@ var userController = {
         var that = this;
 
         this.uiElements.loginButton.click(function (e) {
-            var params = {
-                authParams: {
-                    scope: 'openid email user_metadata picture'
-                }
-            };
-
-            that.data.auth0Lock.show(params, function (err, profile, token) {
-                if (err) {
-                    // Error callback
-                    alert('There was an error');
-                } else {
-                    // Save the JWT token.
-                    localStorage.setItem('userToken', token);
-
-                    that.configureAuthenticatedRequests();
-
-                    that.showUserAuthenticationDetails(profile);
-                }
-            });
+            that.data.auth0Lock.show();
         });
 
         this.uiElements.logoutButton.click(function (e) {
-            localStorage.removeItem('userToken');
+            localStorage.removeItem('accessToken');
+            localStorage.removeItem('idToken');
 
             that.uiElements.logoutButton.hide();
             that.uiElements.profileButton.hide();
@@ -96,10 +94,19 @@ var userController = {
             that.uiElements.uploadButton.hide();
         });
 
-        this.uiElements.profileButton.click(function (e) {
-            var url = that.data.config.apiBaseUrl + '/user-profile';
+        this.data.auth0Lock.on('authenticated', function(authResult) {
+            that.getUserProfile(authResult.accessToken, authResult.idToken);
+        });
 
-            $.get(url, function (data, status) {
+        this.uiElements.profileButton.click(function (e) {
+
+            var url = that.data.config.apiBaseUrl + '/user-profile';
+            var accessToken = localStorage.getItem('accessToken');
+            var data = {
+                accessToken: accessToken
+            };
+
+            $.get(url, data).done(function (data, status) {
                 // save user profile data in the modal
                 $('#user-profile-raw-json').text(JSON.stringify(data, null, 2));
                 $('#user-profile-modal').modal();

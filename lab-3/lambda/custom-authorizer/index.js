@@ -1,47 +1,108 @@
 /**
  * Created by Peter Sbarski
  * Updated by Mike Chambers
- * Last Updated: 1/02/2017
+ * Updated by Julian Pittas
+ * Last Updated: 10/01/2018
  *
- * Required Env Vars:
- * AUTH0_SECRET
+ * Required Env consts:
+ * AUTH0_BASE_URL
  */
 'use strict';
 
-var jwt = require('jsonwebtoken');
+const jwt = require('jsonwebtoken');
+const rp = require('request-promise');
 
-var generatePolicy = function(principalId, effect, resource) {
-    var authResponse = {};
+
+const generatePolicy = (principalId, effect, resource) => {
+    const authResponse = {};
     authResponse.principalId = principalId;
     if (effect && resource) {
-        var policyDocument = {};
-        policyDocument.Version = '2012-10-17'; // default version
-        policyDocument.Statement = [];
-        var statementOne = {};
-        statementOne.Action = 'execute-api:Invoke'; // default action
-        statementOne.Effect = effect;
-        statementOne.Resource = resource;
-        policyDocument.Statement[0] = statementOne;
+        const statementOne = {
+            Action: 'execute-api:Invoke', // default action
+            Effect: effect,
+            Resource: resource,
+        }
+        const policyDocument = {
+            Version: '2012-10-17',
+            Statement: [statementOne]
+        }
         authResponse.policyDocument = policyDocument;
     }
     return authResponse;
 }
 
-exports.handler = function(event, context, callback){
+
+const verifyJWTToken = (jwtToken, pubKey) => {
+    return new Promise((resolve, reject) => {
+        jwt.verify(jwtToken, pubKey, { algorithms: ['RS256'] }, (err, decoded) => {
+            if (err) {
+                reject(err);
+            } else {
+                resolve(decoded);
+            }
+        });
+    });
+}
+
+exports.handler = (event, context, callback) => {
+    
     if (!event.authorizationToken) {
     	callback('Could not find authToken');
     	return;
     }
 
-    var token = event.authorizationToken.split(' ')[1];
+    const jwtToken = event.authorizationToken.split(' ')[1];
+    if (!jwtToken) {
+        callback('Could not find authToken');
+    	return;
+    }
+    const decodedToken = jwt.decode(jwtToken, {complete: true});
 
-    var secretBuffer = new Buffer(process.env.AUTH0_SECRET);
-    jwt.verify(token, secretBuffer, function(err, decoded){
-    	if(err){
-    		console.log('Failed jwt verification: ', err, 'auth: ', event.authorizationToken);
-    		callback('Authorization Failed');
-    	} else {
-    		callback(null, generatePolicy('user', 'allow', event.methodArn));
-    	}
-    })
+    const Auth0ApiBaseUrl = process.env.AUTH0_BASE_URL;
+    if(!Auth0ApiBaseUrl) {
+        callback('Base Url not found');
+    	return;
+    }
+
+    return rp(`https://${Auth0ApiBaseUrl}/.well-known/jwks.json`)
+        .then((jwks) => {
+
+            const jwksKey = JSON.parse(jwks).keys[0];
+
+            //Validate the algorithm
+            if (!jwksKey) {
+                throw new Error('No supported jwt keys');
+             }
+
+            //Validate the algorithm
+            if (jwksKey.alg !== 'RS256' || decodedToken.header.alg !== 'RS256') {
+               throw new Error('Invalid algorithm used, only RS256 supported');
+            }
+
+            //Validate the signing key
+            if (!jwksKey.kid || decodedToken.header.kid !== jwksKey.kid) {
+                throw new Error('Invalid signing algorithm');
+            }
+
+            //Validate the certificate
+            if (!jwksKey.x5c[0]) {
+                throw new Error('No certificate found');
+            }
+
+            const cert = `-----BEGIN CERTIFICATE-----\n${jwksKey.x5c[0]}\n-----END CERTIFICATE-----\n`;
+
+            return cert;
+
+        })
+        .then((pubKey) => verifyJWTToken(jwtToken, pubKey))
+        .then(() => {
+            callback(null, generatePolicy('user', 'allow', event.methodArn));
+        })
+        .catch((err) => {
+
+            console.log('Failed jwt verification: ', err, 'auth: ', event.authorizationToken);
+            callback('Authorization Failed');
+
+        });
+
 };
