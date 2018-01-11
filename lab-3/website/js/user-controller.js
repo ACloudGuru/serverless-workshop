@@ -54,9 +54,6 @@ var userController = {
             if (error) {
                 return alert('There was an error getting the profile: ' + err.message);
             }
-        
-            localStorage.setItem('accessToken', accessToken);
-            localStorage.setItem('idToken', idToken);
             
             that.configureAuthenticatedRequests();
             that.showUserAuthenticationDetails(profile);
@@ -92,6 +89,8 @@ var userController = {
         });
 
         this.data.auth0Lock.on('authenticated', function(authResult) {
+            localStorage.setItem('accessToken', authResult.accessToken);
+            localStorage.setItem('idToken', authResult.idToken);
             that.getUserProfile(authResult.accessToken, authResult.idToken);
         });
 
