@@ -59,7 +59,7 @@ function sign(key, policy, encoding, next) {
 function generateResponse(status, message){
     return {
       statusCode: status,
-      headers: { "Access-Control-Allow-Origin": "*" },
+      headers: { 'Access-Control-Allow-Origin': '*' },
       body : JSON.stringify(message)
     }
 }

@@ -5,7 +5,7 @@
  * Last Updated: 10/01/2018
  *
  * Required Env consts:
- * AUTH0_BASE_URL
+ * AUTH0_DOMAIN
  */
 'use strict';
 
@@ -58,7 +58,7 @@ exports.handler = (event, context, callback) => {
     }
     const decodedToken = jwt.decode(jwtToken, {complete: true});
 
-    const Auth0ApiBaseUrl = process.env.AUTH0_BASE_URL;
+    const Auth0ApiBaseUrl = process.env.AUTH0_DOMAIN;
     if(!Auth0ApiBaseUrl) {
         callback('Base Url not found');
     	return;
