@@ -1,7 +1,8 @@
 /**
  * Created by Peter Sbarski
  * Updated by Mike Chambers
- * Last Updated: 1/02/2017
+ * Updated by Julian Pittas
+ * Last Updated: 10/01/2018
  *
  * Required Env Vars:
  * AUTH0_DOMAIN
@@ -13,32 +14,37 @@ var request = require('request');
 function generateResponse(status, message){
     return {
       statusCode: status,
-      headers: { "Access-Control-Allow-Origin": "*" },
+      headers: { 'Access-Control-Allow-Origin': '*' },
       body: JSON.stringify({'message':message})
     }
 }
 
 exports.handler = function(event, context, callback){
-    var authToken = event.headers.Authorization;
+    console.log(event);
+    var idToken = event.headers.Authorization;
+    var accessToken = event.queryStringParameters.accessToken;
 
-    if (!authToken) {
-      var response = generateResponse(400, 'AuthToken not found');
+    if (!idToken) {
+      var response = generateResponse(400, 'ID token not found');
 
     	callback(null, response);
     	return;
     }
 
-    var token = authToken.split(' ')[1];
-
-    var body = {
-        'id_token': token
-    };
+    if (!accessToken) {
+        var response = generateResponse(400, 'AccessToken not found');
+  
+        callback(null, response);
+        return;
+    }
 
     var options = {
-        url: 'https://' +  process.env.AUTH0_DOMAIN + '/tokeninfo',
+        url: 'https://' +  process.env.AUTH0_DOMAIN + '/userinfo',
         method: 'POST',
         json: true,
-        body: body
+        headers: {
+            'Authorization': `Bearer ${accessToken}`
+        }
     };
 
     request(options, function(error, response, body){
