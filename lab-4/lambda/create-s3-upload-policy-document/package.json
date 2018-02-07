@@ -12,7 +12,6 @@
   },
   "dependencies": {
     "async": "^2.0.0-rc.3",
-    "aws-sdk": "^2.3.2",
     "crypto": "0.0.3",
     "log": "^1.4.0"
   },
