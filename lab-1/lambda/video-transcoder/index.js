@@ -31,7 +31,7 @@ const handler = (event, context, callback) => {
     const key = event.Records[0].s3.object.key;
 
     // The input file may have spaces so replace them with '+'
-    const sourceKey = decodeURIComponent(S3ObjectKey.replace(/\+/g, ' '));
+    const sourceKey = decodeURIComponent(key.replace(/\+/g, ' '));
 
     // Remove the file extension
     const outputKey = sourceKey.split('.')[0];
@@ -80,4 +80,6 @@ const handler = (event, context, callback) => {
 };
 
 
-module.exports = handler;
+module.exports = {
+    handler
+};
