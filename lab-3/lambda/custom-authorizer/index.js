@@ -1,13 +1,14 @@
+'use strict';
+
 /**
  * Created by Peter Sbarski
  * Updated by Mike Chambers
  * Updated by Julian Pittas
- * Last Updated: 10/01/2018
+ * Last Updated: 27/21/2018
  *
  * Required Env consts:
  * AUTH0_DOMAIN
  */
-'use strict';
 
 const jwt = require('jsonwebtoken');
 const rp = require('request-promise');
@@ -44,7 +45,7 @@ const verifyJWTToken = (jwtToken, pubKey) => {
     });
 }
 
-exports.handler = (event, context, callback) => {
+const handler = (event, context, callback) => {
     
     if (!event.authorizationToken) {
     	callback('Could not find authToken');
@@ -106,3 +107,7 @@ exports.handler = (event, context, callback) => {
         });
 
 };
+
+module.exports = {
+    handler
+}

@@ -13,4 +13,5 @@ This function requires an ElasticTranscoder
 
 ### Deployment steps
 1. Run "npm install" to install dependencies
-2. Run "npm run deploy" to deploy to AWS
+2. Run "npm run predeploy" to package the function into a zip file
+3. Upload it the resulting Lambda-Deployment.zip using the AWS Lambda Console
