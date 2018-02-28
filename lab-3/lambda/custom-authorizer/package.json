@@ -12,8 +12,5 @@
     "request-promise": "^4.2.2"
   },
   "author": "Peter Sbarski",
-  "license": "BSD-2-Clause",
-  "devDependencies": {
-    "run-local-lambda": "^1.0.0"
-  }
+  "license": "BSD-2-Clause"
 }

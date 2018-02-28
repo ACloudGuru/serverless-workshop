@@ -4,7 +4,7 @@
  * Created by Peter Sbarski
  * Updated by Mike Chambers
  * Updated by Julian Pittas
- * Last Updated: 27/21/2018
+ * Last Updated: 27/02/2018
  *
  * Required Env consts:
  * AUTH0_DOMAIN
