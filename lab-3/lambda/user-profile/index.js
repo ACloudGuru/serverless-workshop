@@ -14,9 +14,9 @@ const rp = require('request-promise');
 
 const generateResponse = (status, message) => {
     return {
-      statusCode: status,
-      headers: { 'Access-Control-Allow-Origin': '*' },
-      body: JSON.stringify({'message':message})
+        statusCode: status,
+        headers: { 'Access-Control-Allow-Origin': '*' },
+        body: JSON.stringify({'message':message})
     }
 };
 

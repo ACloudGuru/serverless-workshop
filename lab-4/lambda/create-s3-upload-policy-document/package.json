@@ -6,12 +6,9 @@
   "scripts": {
     "predeploy": "zip -r Lambda-Deployment.zip * -x *.zip *.json *.log"
   },
-  "dependencies": {
-    "async": "^2.0.0-rc.3",
-    "aws-sdk": "^2.3.2",
-    "crypto": "0.0.3",
-    "log": "^1.4.0"
-  },
   "author": "Peter Sbarski",
-  "license": "BSD-2-Clause"
+  "license": "BSD-2-Clause",
+  "dependencies": {
+    "aws-sdk": "^2.203.0"
+  }
 }

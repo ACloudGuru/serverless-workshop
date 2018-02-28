@@ -30,7 +30,7 @@ const generatePolicy = (principalId, effect, resource) => {
         authResponse.policyDocument = policyDocument;
     }
     return authResponse;
-}
+};
 
 
 const verifyJWTToken = (jwtToken, pubKey) => {
@@ -43,7 +43,7 @@ const verifyJWTToken = (jwtToken, pubKey) => {
             }
         });
     });
-}
+};
 
 const handler = (event, context, callback) => {
     
@@ -110,4 +110,4 @@ const handler = (event, context, callback) => {
 
 module.exports = {
     handler
-}
+};
