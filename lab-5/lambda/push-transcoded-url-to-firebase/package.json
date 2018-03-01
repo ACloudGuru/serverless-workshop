@@ -7,12 +7,9 @@
     "predeploy": "zip -r Lambda-Deployment.zip * -x *.zip *.log"
   },
   "dependencies": {
-    "aws-sdk": "^2.3.2",
+    "aws-sdk": "^2.204.0",
     "firebase": "^3.2.1"
   },
   "author": "Peter Sbarski",
-  "license": "BSD-2-Clause",
-  "devDependencies": {
-    "run-local-lambda": "^1.1.0"
-  }
+  "license": "BSD-2-Clause"
 }
