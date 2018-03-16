@@ -81,7 +81,7 @@ const handler = (event, context, callback) => {
       signature: signature,
       encoded_policy: encodedPolicyDocument,
       access_key: process.env.ACCESS_KEY_ID,
-      upload_url: (process.env.UPLOAD_URI  || 'https://s3.amazonaws.com') + '/' + process.env.UPLOAD_BUCKET,
+      upload_url: (process.env.UPLOAD_URI  || 'https://s3.amazonaws.com') + '/' + bucket,
       key: key
   };
 

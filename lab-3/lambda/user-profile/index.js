@@ -22,7 +22,7 @@ const generateResponse = (status, message) => {
 
 const handler = (event, context, callback) => {
 
-    console.log(JSON.stringify(event. null, 2));
+    console.log(JSON.stringify(event, null, 2));
 
     // Grab the Id token from the request header, the access token from the url
     // and the auth0 doimain name from the environment variables
