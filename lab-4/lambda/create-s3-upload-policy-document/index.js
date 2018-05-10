@@ -1,7 +1,10 @@
+'use strict';
+
 /**
  * Created by Peter Sbarski
  * Updated by Mike Chambers
- * Last Updated: 1/02/2017
+ * Updated by Julian Pittas
+ * Last Updated: 28/02/2018
  *
  * Required Env Vars:
  * UPLOAD_BUCKET
@@ -10,85 +13,83 @@
  * UPLOAD_URI - https://s3.amazonaws.com
  */
 
-'use strict';
+const AWS = require('aws-sdk');
+const crypto = require('crypto');
 
-var AWS = require('aws-sdk');
-var async = require('async');
-var crypto = require('crypto');
+const s3 = new AWS.S3();
 
-var s3 = new AWS.S3();
 
-function base64encode (value) {
+const base64encode = (value) => {
   return new Buffer(value).toString('base64');
-}
+};
 
-function generateExpirationDate() {
-  var currentDate = new Date();
+const generateExpirationDate = ()  => {
+  // Adds a day to the current date
+  let currentDate = new Date();
   currentDate = currentDate.setDate(currentDate.getDate() + 1);
   return new Date(currentDate).toISOString();
-}
+};
 
-function generatePolicyDocument(filename, next) {
-  var directory = crypto.randomBytes(20).toString('hex');
-  var key = directory + '/' + filename;
-  var expiration = generateExpirationDate();
+const generatePolicyDocument = (key, bucket)  => {
 
-  var policy = {
+  const expiration = generateExpirationDate();
+
+  const policy = {
       'expiration' : expiration,
       'conditions': [
           {key: key},
-          {bucket: process.env.UPLOAD_BUCKET},
+          {bucket: bucket},
           {acl: 'private'},
           ['starts-with', '$Content-Type', '']
       ]
   };
 
-  next(null, key, policy);
+  return policy;
+
+};
+
+const encode = (policy)  => {
+  return base64encode(JSON.stringify(policy)).replace('\n','');
 }
 
-function encode(key, policy, next) {
-  var encoding = base64encode(JSON.stringify(policy)).replace('\n','');
-  next(null, key, policy, encoding);
-}
+const generateSignature = (encoding)  => {
+  return crypto.createHmac('sha1', process.env.SECRET_ACCESS_KEY).update(encoding).digest('base64');
+};
 
-function sign(key, policy, encoding, next) {
-  var signature = crypto.createHmac('sha1', process.env.SECRET_ACCESS_KEY).update(encoding).digest('base64');
-  next(null, key, policy, encoding, signature);
-}
-
-function generateResponse(status, message){
+const generateResponse = (status, message) => {
     return {
       statusCode: status,
       headers: { 'Access-Control-Allow-Origin': '*' },
       body : JSON.stringify(message)
     }
-}
+};
 
-exports.handler = function(event, context, callback){
-  var filename = decodeURI(event.queryStringParameters.filename);
+const handler = (event, context, callback) => {
 
-  async.waterfall([
-      async.apply(generatePolicyDocument, filename),
-      encode,
-      sign
-  ],
-    function (err, key, policy, encoding, signature) {
-      if (err) {
-        var response = generateResponse(400, err);
+  // Get the filename from the query string parameters in the GET call
+  const filename = decodeURI(event.queryStringParameters.filename);
+  const directory = crypto.randomBytes(20).toString('hex');
 
-        callback(null, response);
-      } else {
-        var body = {
-          signature: signature,
-          encoded_policy: encoding,
-          access_key: process.env.ACCESS_KEY_ID,
-          upload_url: (process.env.UPLOAD_URI  || 'https://s3.amazonaws.com') + '/' + process.env.UPLOAD_BUCKET,
-          key: key
-        };
-        var response = generateResponse(200, body);
+  const key = directory + '/' + filename;
+  const bucket = process.env.UPLOAD_BUCKET;
 
-        callback(null, response);
-      }
-    }
-  )
+  const policyDocument = generatePolicyDocument(key, bucket);
+  const encodedPolicyDocument = encode(policyDocument);
+  const signature = generateSignature(encodedPolicyDocument);
+
+  const body = {
+      signature: signature,
+      encoded_policy: encodedPolicyDocument,
+      access_key: process.env.ACCESS_KEY_ID,
+      upload_url: (process.env.UPLOAD_URI  || 'https://s3.amazonaws.com') + '/' + bucket,
+      key: key
+  };
+
+  const response = generateResponse(200, body);
+  callback(null, response);
+
+};
+
+module.exports = {
+  handler
 };

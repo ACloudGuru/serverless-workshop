@@ -4,17 +4,12 @@
   "description": "This Lambda function will update firebase with the URL of a newly transocded video file",
   "main": "index.js",
   "scripts": {
-    "test": "run-local-lambda --file index.js --event tests/event.json",
-    "deploy": "aws lambda update-function-code --function-name arn:aws:lambda:us-east-1:038221756127:function:transcode-video --zip-file fileb://Lambda-Deployment.zip",
     "predeploy": "zip -r Lambda-Deployment.zip * -x *.zip *.log"
   },
   "dependencies": {
-    "aws-sdk": "^2.3.2",
+    "aws-sdk": "^2.204.0",
     "firebase": "^3.2.1"
   },
   "author": "Peter Sbarski",
-  "license": "BSD-2-Clause",
-  "devDependencies": {
-    "run-local-lambda": "^1.1.0"
-  }
+  "license": "BSD-2-Clause"
 }

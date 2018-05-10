@@ -1,34 +1,45 @@
+'use strict';
+
+
 /**
  * Created by Peter Sbarski
  * Updated by Mike Chambers
- * Last Updated: 1/02/2017
+ * Updated by Julian Pittas
+ * Last Updated: 27/02/2018
  *
  * Required Env Vars:
  * ELASTIC_TRANSCODER_REGION
  * ELASTIC_TRANSCODER_PIPELINE_ID
  */
 
-'use strict';
-var AWS = require('aws-sdk');
 
-var elasticTranscoder = new AWS.ElasticTranscoder({
+const AWS = require('aws-sdk');
+
+
+const elasticTranscoder = new AWS.ElasticTranscoder({
     region: process.env.ELASTIC_TRANSCODER_REGION
 });
 
-exports.handler = function(event, context, callback){
+
+const handler = (event, context, callback) => {
+
     console.log('Welcome');
     console.log('event: ' + JSON.stringify(event));
 
-    var key = event.Records[0].s3.object.key;
+    // Grab the pipeline ID from the environment variables and the key name from the event passed in
+    const pipelineId = process.env.ELASTIC_TRANSCODER_PIPELINE_ID;
+    const key = event.Records[0].s3.object.key;
 
-    //the input file may have spaces so replace them with '+'
-    var sourceKey = decodeURIComponent(key.replace(/\+/g, ' '));
+    // The input file may have spaces so replace them with '+'
+    const sourceKey = decodeURIComponent(key.replace(/\+/g, ' '));
 
-    //remove the extension
-    var outputKey = sourceKey.split('.')[0];
+    // Remove the file extension
+    const outputKey = sourceKey.split('.')[0];
 
-    var params = {
-        PipelineId: process.env.ELASTIC_TRANSCODER_PIPELINE_ID,
+    // Build the parameters for the Job pipeline. 
+    // Reference: https://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/ElasticTranscoder.html#createJob-property
+    const params = {
+        PipelineId: pipelineId,
         OutputKeyPrefix: outputKey + '/',
         Input: {
             Key: sourceKey
@@ -46,12 +57,29 @@ exports.handler = function(event, context, callback){
                 Key: outputKey + '-web-720p' + '.mp4',
                 PresetId: '1351620000001-100070' //Web Friendly 720p
             }
-        ]};
+    ]};
 
-    elasticTranscoder.createJob(params, function(error, data){
-        if (error){
+
+    // Call our function that creates an ElasticTranscoder Job
+    return elasticTranscoder.createJob(params)
+        .promise()
+        .then((data) => {
+
+            // Success
+            console.log(`ElasticTranscoder callback data: ${JSON.stringify(data)}`);
+            callback(null, data);
+
+        }).catch((error) => {
+
+            // Failure
+            console.log(`An error occured ${JSON.stringify(error, null, 2)}`);
             callback(error);
-        }
-        console.log('elasticTranscoder callback data: ' + JSON.stringify(data));
-    });
+
+        });
+
+};
+
+
+module.exports = {
+    handler
 };

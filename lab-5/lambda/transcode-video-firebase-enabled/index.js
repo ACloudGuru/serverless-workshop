@@ -1,7 +1,10 @@
+'use strict';
+
 /**
  * Created by Peter Sbarski
  * Updated by Mike Chambers
- * Last Updated: 1/02/2017
+ * Updated by Julian Pittas
+ * Last Updated: 28/02/2018
  *
  * Required Env Vars:
  * ELASTIC_TRANSCODER_REGION
@@ -10,57 +13,22 @@
  * DATABASE_URL
  */
 
-'use strict';
 
-var AWS = require('aws-sdk');
-var firebase = require('firebase');
+const AWS = require('aws-sdk');
+const firebase = require('firebase');
 
-var elasticTranscoder = new AWS.ElasticTranscoder({
+const elasticTranscoder = new AWS.ElasticTranscoder({
     region: process.env.ELASTIC_TRANSCODER_REGION
 });
 
 firebase.initializeApp({
-  serviceAccount: process.env.SERVICE_ACCOUNT,
-  databaseURL: process.env.DATABASE_URL
+    serviceAccount: process.env.SERVICE_ACCOUNT,
+    databaseURL: process.env.DATABASE_URL
 });
 
-function pushVideoEntryToFirebase(callback, key) {
-    console.log("Adding video entry to firebase at key:", key);
-
-    var database = firebase.database().ref();
-
-    // create a unique entry for this video in firebase
-    database.child('videos').child(key)
-        .set({
-            transcoding: true
-        })
-        .then(function () {
-            callback(null, "Video saved");
-        })
-        .catch(function (err) {
-            callback(err);
-        });
-}
-
-exports.handler = function (event, context, callback) {
-    context.callbackWaitsForEmptyEventLoop = false;
-
-    var key = event.Records[0].s3.object.key;
-    console.log("Object key:", key);
-
-    //the input file may have spaces so replace them with '+'
-    var sourceKey = decodeURIComponent(key.replace(/\+/g, ' '));
-    console.log("Source key:", sourceKey);
-
-    //remove the extension
-    var outputKey = sourceKey.split('.')[0];
-    console.log("Output key:", sourceKey);
-
-    // get the unique video key (the folder name)
-    var uniqueVideoKey = outputKey.split('/')[0];
-
-    var params = {
-        PipelineId: process.env.ELASTIC_TRANSCODER_PIPELINE_ID,
+const generateTranscoderParams = (sourceKey, outputKey, transcoderPipelineID) => {
+    const params = {
+        PipelineId: transcoderPipelineID,
         OutputKeyPrefix: outputKey + '/',
         Input: {
             Key: sourceKey
@@ -73,16 +41,60 @@ exports.handler = function (event, context, callback) {
         ]
     };
 
-    elasticTranscoder.createJob(params, function (error, data) {
-        if (error) {
+    return params;
+};
+
+const pushVideoEntryToFirebase = (key) => {
+    console.log("Adding video entry to firebase at key:", key);
+
+    const database = firebase.database().ref();
+
+    // create a unique entry for this video in firebase
+    return database.child('videos').child(key)
+        .set({
+            transcoding: true
+        });
+};
+
+const handler = (event, context, callback) => {
+
+    context.callbackWaitsForEmptyEventLoop = false;
+    const pipelineID = process.env.ELASTIC_TRANSCODER_PIPELINE_ID;
+
+    const key = event.Records[0].s3.object.key;
+    console.log("Object key:", key);
+
+    //the input file may have spaces so replace them with '+'
+    const sourceKey = decodeURIComponent(key.replace(/\+/g, ' '));
+    console.log("Source key:", sourceKey);
+
+    //remove the extension
+    const outputKey = sourceKey.split('.')[0];
+    console.log("Output key:", sourceKey);
+
+    // get the unique video key (the folder name)
+    const uniqueVideoKey = outputKey.split('/')[0];
+
+    const params = generateTranscoderParams(sourceKey, outputKey, pipelineID);
+
+    return elasticTranscoder.createJob(params)
+        .promise()
+        .then((data) => {
+            // the transcoding job started, so let's make a record in firebase
+            // that the UI can show right away
+            console.log("Elastic transcoder job created successfully");
+            return pushVideoEntryToFirebase(uniqueVideoKey);
+        })
+        .then(() => {
+            callback(null, 'Video Saved');
+        })
+        .catch((error) => {
             console.log("Error creating elastic transcoder job.");
             callback(error);
-            return;
-        }
+        });
+};
 
-        // the transcoding job started, so let's make a record in firebase
-        // that the UI can show right away
-        console.log("Elastic transcoder job created successfully");
-        pushVideoEntryToFirebase(callback, uniqueVideoKey);
-    });
+
+module.exports = {
+    handler
 };

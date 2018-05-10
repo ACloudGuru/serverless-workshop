@@ -4,15 +4,12 @@
   "description": "This Lambda function returns the current user-profile",
   "main": "index.js",
   "scripts": {
-    "deploy": "aws lambda update-function-code --function-name arn:aws:lambda:us-east-1:038671756123:function:user-profile --zip-file fileb://Lambda-Deployment.zip",
     "predeploy": "zip -r Lambda-Deployment.zip * -x *.zip *.json *.log"
-  },
-  "dependencies": {
-    "request": "^2.69.0"
   },
   "author": "Peter Sbarski",
   "license": "BSD-2-Clause",
-  "devDependencies": {
-    "run-local-lambda": "^1.0.0"
+  "dependencies": {
+    "request": "^2.83.0",
+    "request-promise": "^4.2.2"
   }
 }
