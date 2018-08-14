@@ -24,7 +24,7 @@ var userController = {
                 params: {
                     scope: 'openid profile email user_metadata picture'
                 },
-                responseType: 'id_token token'
+                responseType: 'token'
             }
         };
         this.data.auth0Lock = new Auth0Lock(config.auth0.clientId, config.auth0.domain, params);
@@ -34,11 +34,11 @@ var userController = {
         var idToken = localStorage.getItem('idToken');
 
         this.wireEvents();
-        
+
         if (accessToken && idToken) {
             this.getUserProfile(accessToken, idToken);
-        }        
-        
+        }
+
     },
     configureAuthenticatedRequests: function () {
         $.ajaxSetup({
@@ -49,15 +49,15 @@ var userController = {
     },
     getUserProfile: function (accessToken, idToken) {
         var that = this;
-        this.data.auth0Lock.getUserInfo(accessToken, function(error, profile) {
-            
+        this.data.auth0Lock.getUserInfo(accessToken, function (error, profile) {
+
             if (error) {
-                return alert('There was an error getting the profile: ' + err.message);
+                return alert('There was an error getting the profile: ' + error.message);
             }
-            
+
             that.configureAuthenticatedRequests();
             that.showUserAuthenticationDetails(profile);
-            
+
         });
     },
     showUserAuthenticationDetails: function (profile) {
@@ -88,7 +88,7 @@ var userController = {
             that.uiElements.loginButton.show();
         });
 
-        this.data.auth0Lock.on('authenticated', function(authResult) {
+        this.data.auth0Lock.on('authenticated', function (authResult) {
             localStorage.setItem('accessToken', authResult.accessToken);
             localStorage.setItem('idToken', authResult.idToken);
             that.getUserProfile(authResult.accessToken, authResult.idToken);
