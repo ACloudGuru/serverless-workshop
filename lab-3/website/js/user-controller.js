@@ -34,10 +34,10 @@ var userController = {
         var idToken = localStorage.getItem('idToken');
 
         this.wireEvents();
-        
+
         if (accessToken && idToken) {
             this.getUserProfile(accessToken, idToken);
-        }        
+        }
 
     },
     configureAuthenticatedRequests: function () {
@@ -49,15 +49,15 @@ var userController = {
     },
     getUserProfile: function (accessToken, idToken) {
         var that = this;
-        this.data.auth0Lock.getUserInfo(accessToken, function(error, profile) {
-            
+        this.data.auth0Lock.getUserInfo(accessToken, function (error, profile) {
+
             if (error) {
-                return alert('There was an error getting the profile: ' + err.message);
+                return alert('There was an error getting the profile: ' + error.message);
             }
-            
+
             that.configureAuthenticatedRequests();
             that.showUserAuthenticationDetails(profile);
-            
+
         });
     },
     showUserAuthenticationDetails: function (profile) {
@@ -88,7 +88,7 @@ var userController = {
             that.uiElements.loginButton.show();
         });
 
-        this.data.auth0Lock.on('authenticated', function(authResult) {
+        this.data.auth0Lock.on('authenticated', function (authResult) {
             localStorage.setItem('accessToken', authResult.accessToken);
             localStorage.setItem('idToken', authResult.idToken);
             that.getUserProfile(authResult.accessToken, authResult.idToken);
@@ -101,12 +101,19 @@ var userController = {
             var data = {
                 accessToken: accessToken
             };
+            var button = $(this);
+            button.button('loading');
 
             $.get(url, data).done(function (data, status) {
                 // save user profile data in the modal
                 $('#user-profile-raw-json').text(JSON.stringify(data, null, 2));
                 $('#user-profile-modal').modal();
-            })
+                button.button('reset');
+            }).fail(function (error) {
+                alert('Can\'t retreive user information');
+                button.button('reset');
+                console.error(error);
+            });
         });
     }
 };
