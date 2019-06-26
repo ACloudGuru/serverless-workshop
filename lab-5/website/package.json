@@ -1,19 +1,15 @@
 {
   "name": "24-hour-video",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "The 24 Hour Video Website",
-  "local-web-server": {
-    "port": 8100,
-    "forbid": "*.json"
-  },
   "scripts": {
-    "start": "ws",
+    "start": "ws --port 8100",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Peter Sbarski",
+  "author": "Julian Pittas",
   "license": "BSD-2-Clause",
   "devDependencies": {
-    "local-web-server": "^1.1.0"
+    "local-web-server": "^3.0.3"
   },
   "dependencies": {}
 }

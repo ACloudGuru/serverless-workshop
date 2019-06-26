@@ -1,28 +1,23 @@
 'use strict';
 
 /**
- * Created by Peter Sbarski
- * Updated by Mike Chambers
- * Updated by Julian Pittas
- * Last Updated: 28/02/2018
- *
  * Required Env Vars:
  * ELASTIC_TRANSCODER_REGION
  * ELASTIC_TRANSCODER_PIPELINE_ID
- * SERVICE_ACCOUNT
  * DATABASE_URL
  */
 
 
 const AWS = require('aws-sdk');
-const firebase = require('firebase');
+const firebase = require('firebase-admin');
+const serviceAccount = require(`./key.json`);
 
 const elasticTranscoder = new AWS.ElasticTranscoder({
     region: process.env.ELASTIC_TRANSCODER_REGION
 });
 
 firebase.initializeApp({
-    serviceAccount: process.env.SERVICE_ACCOUNT,
+    credential: firebase.credential.cert(serviceAccount),
     databaseURL: process.env.DATABASE_URL
 });
 

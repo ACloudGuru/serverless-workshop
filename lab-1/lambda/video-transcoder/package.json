@@ -1,12 +1,12 @@
 {
   "name": "transcode-video",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "This Lambda function will create a job to transcode videos uploaded to an S3 bucket",
   "main": "index.js",
   "scripts": {
     "predeploy": "zip -r Lambda-Deployment.zip * -x *.zip *.json *.log"
   },
-  "author": "Peter Sbarski",
+  "author": "Julian Pittas",
   "license": "BSD-2-Clause",
   "dependencies": {
     "aws-sdk": "^2.203.0"

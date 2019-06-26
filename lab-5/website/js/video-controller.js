@@ -20,7 +20,7 @@ var videoController = {
         // clone the template video element
         var newVideoElement = this.uiElements.videoCardTemplate.clone().attr('id', videoId);
 
-        newVideoElement.click(function() {
+        newVideoElement.click(function () {
             // the user has clicked on the video... let's play it, or pause it depending on state
             var video = newVideoElement.find('video').get(0);
 
@@ -41,7 +41,7 @@ var videoController = {
 
         this.uiElements.videoList.prepend(newVideoElement);
     },
-    updateVideoOnScreen: function(videoElement, videoObj) {
+    updateVideoOnScreen: function (videoElement, videoObj) {
 
         if (videoObj.transcoding) {
             // the video is currently transcoding... hide the video and show the spinner
@@ -56,19 +56,18 @@ var videoController = {
         // set the video URL
         videoElement.find('video').attr('src', videoObj.source);
     },
-    getElementForVideo: function(videoId) {
+    getElementForVideo: function (videoId) {
         return $('#' + videoId);
     },
     connectToFirebase: function () {
         var that = this;
 
-        /* PASTE CONFIG HERE */
-        // var config = {
-        //   apiKey: "",
-        //   authDomain: "",
-        //   databaseURL: "",
-        //   storageBucket: "",
-        // };
+        /* 
+        *
+        *       PASTE CONFIG HERE 
+        *
+        */
+
 
         firebase.initializeApp(config);
 

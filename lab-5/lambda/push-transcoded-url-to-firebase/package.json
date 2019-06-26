@@ -1,6 +1,6 @@
 {
   "name": "push-transcoded-url-to-firebase",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "This Lambda function will update firebase with the URL of a newly transocded video file",
   "main": "index.js",
   "scripts": {
@@ -8,8 +8,8 @@
   },
   "dependencies": {
     "aws-sdk": "^2.204.0",
-    "firebase": "^3.2.1"
+    "firebase-admin": "^8.2.0"
   },
-  "author": "Peter Sbarski",
+  "author": "Julian Pittas",
   "license": "BSD-2-Clause"
 }
