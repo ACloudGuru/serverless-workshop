@@ -19,9 +19,10 @@ var uploadController = {
 
         this.uiElements.uploadButton.on('change', function (result) {
             var file = $('#upload').get(0).files[0];
-            var requestDocumentUrl = that.data.config.apiBaseUrl + '/s3-policy-document?filename=' + encodeURI(file.name);
+            var requestDocumentUrl = that.data.config.apiBaseUrl + '/s3-upload-link?filename=' + encodeURI(file.name) + '&filetype=' + encodeURI(file.type);
 
             $.get(requestDocumentUrl, function (data, status) {
+                console.log(data);
                 that.upload(file, data, that)
             });
 
@@ -29,22 +30,22 @@ var uploadController = {
         });
     },
     upload: function (file, data, that) {
-
         this.uiElements.uploadButtonContainer.hide();
         this.uiElements.uploadProgressBar.show();
         this.uiElements.uploadProgressBar.find('.progress-bar').css('width', '0');
 
         var fd = new FormData();
-        fd.append('key', data.key)
+        for (var key in data.fields) {
+            if (data.fields.hasOwnProperty(key)) {
+                var value = data.fields[key];
+                fd.append(key, value);
+            }
+        }
         fd.append('acl', 'private');
-        fd.append('Content-Type', file.type);
-        fd.append('AWSAccessKeyId', data.access_key);
-        fd.append('policy', data.encoded_policy)
-        fd.append('signature', data.signature);
-        fd.append('file', file, file.name);
+        fd.append('file', file);
 
         $.ajax({
-            url: data.upload_url,
+            url: data.url,
             type: 'POST',
             data: fd,
             processData: false,
@@ -56,14 +57,14 @@ var uploadController = {
         }).done(function (response) {
             that.uiElements.uploadButtonContainer.show();
             that.uiElements.uploadProgressBar.hide();
+            alert('Uploaded Finished');
         }).fail(function (response) {
             that.uiElements.uploadButtonContainer.show();
             that.uiElements.uploadProgressBar.hide();
             alert('Failed to upload');
-        });
+        })
     },
     progress: function () {
-
         var xhr = $.ajaxSettings.xhr();
         xhr.upload.onprogress = function (evt) {
             var percentage = evt.loaded / evt.total * 100;

@@ -1,10 +1,6 @@
 'use strict';
 
 /**
- * Created by Peter Sbarski
- * Updated by Mike Chambers
- * Updated by Julian Pittas
- * Last Updated: 27/02/2018
  *
  * Required Env consts:
  * AUTH0_DOMAIN
@@ -47,6 +43,7 @@ const verifyJWTToken = (jwtToken, pubKey) => {
 
 const handler = (event, context, callback) => {
     
+    // The authorization token is in the form of "Authentication": "Bearer (some ID token from the frontent)"
     if (!event.authorizationToken) {
     	callback('Could not find authToken');
     	return;

@@ -48,6 +48,7 @@ var userController = {
         });
     },
     getUserProfile: function (accessToken, idToken) {
+        // ID token isn't used, we do need to for all future request to the API though.
         var that = this;
         this.data.auth0Lock.getUserInfo(accessToken, function (error, profile) {
 
